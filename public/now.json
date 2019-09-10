@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "alias": "pratttarins-medigenda-app",
+    "name": "medigenda-app",
+    "routes": [
+        {
+          "src": "^/static/(.*)",
+          "dest": "/static/$1"
+        },
+        {
+          "src": ".*",
+          "dest": "/index.html"
+        }
+    ]
+  }

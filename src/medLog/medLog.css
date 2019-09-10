@@ -1,0 +1,27 @@
+table {
+    padding-left: 15px;
+  
+}
+th {
+    margin: 0px;
+    padding-right: 5px;
+    padding-left: 0px;
+    border-bottom: 2px black solid;
+   
+}
+
+td {
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.myMeds {
+    text-align: center;
+    
+}
+
+
+

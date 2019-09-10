@@ -1,0 +1,34 @@
+.pastApptCardListing {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: flex-start;
+    padding-left: 15px;
+}
+
+.pastApptCard {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 380px;
+}
+
+.apptDate {
+    font-weight: bolder;
+}
+
+.pastApptCard {
+    margin-bottom: 5px;
+}
+
+.findButton {
+    margin-left: 7px;
+    margin-bottom: 7px;
+}
+
+/* .pastApptBillingCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    align-items: flex-end;
+} */

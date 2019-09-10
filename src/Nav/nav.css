@@ -1,0 +1,45 @@
+nav {
+    text-align: left;
+    width: 380px;
+   
+}
+
+.medLog {
+    text-align: center;
+    background: rgb(238, 238, 148);
+    padding: 5px;
+    font-weight: bolder;
+    display: block;
+  
+}
+
+.upcomingAppts {
+    text-align: center;
+    background: rgb(172, 202, 128);
+    padding: 5px;
+    font-weight: bolder;
+    display: block;
+}
+
+.pastAppts {
+    text-align: center;
+    background: rgb(155, 192, 80);
+    padding: 5px;
+    font-weight: bolder;
+    display: block;
+    
+}
+
+.medLog:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+.pastAppts:hover {
+    cursor: pointer;
+    color: blue;
+}
+.upcomingAppts:hover {
+    cursor: pointer;
+    color: blue;
+}

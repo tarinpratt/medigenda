@@ -1,0 +1,31 @@
+.calendar-header_button  {
+    display: none;
+}
+
+.calendar-month_header {
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+
+.calendar-month_header_title {
+    display: inline;
+    margin: 5px;
+    
+}
+
+.calendar-days_of_week_day {
+    display: inline;
+    margin: 7px;
+}
+
+.calendar-header_button {
+    height: 30px;
+    width: 30px;
+}
+
+.calendar-day {
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+
+}

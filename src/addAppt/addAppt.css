@@ -1,0 +1,33 @@
+#addApptForm {
+    padding-left: 15px;
+    text-align: left;
+}
+
+#addApptForm_apptDate {
+    width: 100px;
+}
+#addApptForm_apptTime {
+    width: 98px;
+}
+
+#addApptForm_apptLocation {
+    width: 188px;
+}
+
+#addApptForm_apptDoctor {
+    width: 200px;
+}
+
+#addApptForm_purposeForVisit {
+    height: 40px;
+}
+
+#addApptForm_apptNotes {
+    height: 75px;
+    width: 130px;
+}
+
+.addApptButtons {
+    width: 100px;
+    margin-right: 25px;
+}
