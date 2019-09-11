@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './header.css';
 
 function Header() {
   return (
     
       <header className='Header' role="banner">
-          <a href='/'><h1>MediGenda</h1></a>
+          <Link to='/'><h1>MediGenda</h1></Link>
           <h2>Your very own personalized medical agenda</h2>
           
-          <a href='/login'>Log In</a>
+          <Link to='/login'>Log In</Link>
         
-          <a href='/register'>Register</a>
+          <Link to='/register'>Register</Link>
         
 
       </header>

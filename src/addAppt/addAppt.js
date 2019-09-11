@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './addAppt.css';
 
 class AddAppt extends Component {
@@ -120,7 +121,7 @@ class AddAppt extends Component {
          <button className="addApptButtons" type='submit'>
              Submit
          </button>
-         <button className="addApptButtons" type="submit"><a href='/upcomingAppts'>Back</a></button>
+         <Link to='/upcomingAppts'><button className="addApptButtons" type="submit">Back</button></Link>
         
      </form>
   );

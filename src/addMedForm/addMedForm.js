@@ -35,7 +35,7 @@ class AddMedForm extends Component {
 
 
     render() {
-        console.log(this.state)
+      
   return (
      <form id='addMedForm' onSubmit={this.handleSubmit}>
          <h3>New Entry</h3>

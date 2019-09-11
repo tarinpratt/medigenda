@@ -18,13 +18,13 @@ class PastAppts extends Component {
 
 
     render(){
-        const apptArray = this.props.store.pastAppts;
-        console.log(apptArray)
-        console.log('past appt date', this.state.date)
-        const findByDate = (apptArray=[], apptDate) => 
-        apptArray.find(date => date.apptDate === apptDate) 
-        const date = findByDate(apptArray, this.state.date);
-        console.log('date', date)
+        // const apptArray = this.props.store.pastAppts;
+        // console.log(apptArray)
+        // console.log('past appt date', this.state.date)
+        // const findByDate = (apptArray=[], apptDate) => 
+        // apptArray.find(date => date.apptDate === apptDate) 
+        // const date = findByDate(apptArray, this.state.date);
+        // console.log('date', date)
       
 
         

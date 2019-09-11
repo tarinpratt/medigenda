@@ -24,8 +24,7 @@ class LoginForm extends Component {
       };
 
     render() {
-        
-    console.log(this.state)
+  
   return (
      <form id='loginForm'>
          <h3>Log In</h3>
