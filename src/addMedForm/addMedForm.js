@@ -15,7 +15,7 @@ class AddMedForm extends Component {
     }
 
     handleChangeMedDate = e => {
-        this.setState({ medDate: e.target.value })
+        this.setState({ medDate: e.target.value})
       };
     
       handleChangeTime = e => {
@@ -35,7 +35,8 @@ class AddMedForm extends Component {
 
 
     render() {
-      
+      console.log(this.state.medDate)
+
   return (
      <form id='addMedForm' onSubmit={this.handleSubmit}>
          <h3>New Entry</h3>

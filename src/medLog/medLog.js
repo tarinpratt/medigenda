@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import AddMedForm from '../addMedForm/addMedForm'
 import './medLog.css';
 
@@ -7,7 +8,7 @@ class MedLog extends Component {
   render() {
     const medList = this.props.store.medLog.map((listing, index) => (
       <tr key={index}>
-      <td>{listing.date}</td>
+      <td>{(new Date(listing.date)).toLocaleDateString()}</td>
       <td>{listing.time}</td>
       <td>{listing.medName}</td>
       <td>{listing.amountTaken}</td>
@@ -15,6 +16,7 @@ class MedLog extends Component {
       </tr>
     )
     )
+    
   return (
       <div className="medLog_page">
           <h1 className="myMeds">My Medications</h1>

@@ -1,9 +1,19 @@
+.pastAppt {
+    display: flex;
+    flex-direction: row;
+}
 .pastApptCardListing {
     display: flex;
     flex-direction: column;
     list-style-type: none;
     align-items: flex-start;
     padding-left: 15px;
+    width: 100px;
+    margin-right: 0px;
+}
+
+.apptLocation {
+    text-align: left;
 }
 
 .pastApptCard {
@@ -16,6 +26,10 @@
     font-weight: bolder;
 }
 
+.otherNotes {
+    list-style-type: none;
+}
+
 .pastApptCard {
     margin-bottom: 5px;
 }
@@ -25,10 +39,7 @@
     margin-bottom: 7px;
 }
 
-/* .pastApptBillingCard {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    list-style-type: none;
-    align-items: flex-end;
-} */
+ .pastApptBillingCard {
+    padding-left: 5px;
+    padding-right: 5px;
+} 

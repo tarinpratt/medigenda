@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+
 import './pastAppts.css';
+
 
 class PastAppts extends Component {
     constructor(props) {
@@ -15,30 +17,29 @@ class PastAppts extends Component {
       };
 
 
-
-
     render(){
-        // const apptArray = this.props.store.pastAppts;
-        // console.log(apptArray)
-        // console.log('past appt date', this.state.date)
-        // const findByDate = (apptArray=[], apptDate) => 
-        // apptArray.find(date => date.apptDate === apptDate) 
-        // const date = findByDate(apptArray, this.state.date);
-        // console.log('date', date)
-      
+        const apptArray = this.props.store.pastAppts;
 
+        const findByDate = (apptArray=[], apptDate) => 
+        apptArray.find(date => date.apptDate === apptDate) 
+        
+
+        const date = findByDate(apptArray, this.state.date);
+        console.log('date', date)
+//want to implement find card by date feature here. Currently able to match values of
+//date with the appt card, just need to figure out how to render only that appt card
         
         const pastApptList = this.props.store.pastAppts.map((listing, index) => (
+            
             <div key={index} className="pastApptCard">
-            <ul key={index} className="pastApptCardListing">
+                <div className="pastAppt">
+            <ul className="pastApptCardListing">
             <li className="apptDate">
-                {listing.apptDate}
+                { (new Date(listing.apptDate)).toLocaleDateString() }
             </li>
-            <span> - </span>
             <li className="apptTime">
                 {listing.apptTime}
             </li>
-            <span> - </span>
             <li className="apptLocation">
                 {listing.apptLocation}
             </li>
@@ -49,13 +50,19 @@ class PastAppts extends Component {
                 {listing.apptPurpose}
             </li>
         </ul>
+        <ul className="otherNotes">
+            <li>
+                {listing.otherNotes}
+            </li>
+        </ul>
+        </div>
         <table className="pastApptBillingCard">
               <thead>
               <tr>
               <th className="copay">Co-pay</th>
               <th className="docBill">Bill From Doctor</th>
-              <th className="insuranceBill">Bill From Insurance</th>
-              <th className="otherNotes">Other Notes</th>
+              <th className="insuranceBill">Insurance says I owe</th>
+              
               </tr>
               </thead>
               <tbody>
@@ -63,7 +70,7 @@ class PastAppts extends Component {
             <td>{listing.copay}</td>
             <td>{listing.docBill}</td>
             <td>{listing.insuranceBill}</td>
-            <td>{listing.otherNotes}</td>
+            
             </tr>
               </tbody>
           </table>
@@ -93,7 +100,6 @@ class PastAppts extends Component {
              type="date"
              value={this.state.date}
              onChange={this.handleChangeDate}
-              placeholder="Search for date.."
               ></input>
              <button className="findButton" type="submit">Find</button>
          </form>

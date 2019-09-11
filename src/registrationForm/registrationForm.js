@@ -24,8 +24,7 @@ class RegistrationForm extends Component {
       };
 
     render() {
-        
-    console.log(this.state)
+ 
   return (
      <form id='registrationForm'>
          <h3>Register</h3>

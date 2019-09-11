@@ -1,9 +1,14 @@
 .myUpcomingAppts{
     width: 380px;
 }
-.apptCard {
+.apptCardInfo {
     display: flex;
     text-align: center;
+}
+
+.apptCard {
+    border-radius: 5px;
+    border: 1px solid black;
 }
 .apptCardListing {
     padding-left: 10px;
@@ -15,13 +20,14 @@
 }
 
 .apptCardButtons {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    display: inline-block;
+    margin: 5px;
 }
+
 
 .apptCardButtonsList {
     width: 75px;
+    margin: 5px;
 }
 
 .addApptLink {
@@ -36,19 +42,23 @@
     color: green;
 }
 
-.dropNoteContent {
-    margin-left: 15px;
-    width: 200px;
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 5px;
+.apptCardButtonsListNotes {
+    width: 75px;
 }
 
-.dropNoteContent ul li {
+.dropNoteContent {
+    margin-left: 30px;
+    width: 160px;
+    text-align: center;
+
+}
+
+.dropNoteContent ul {
+    padding: 5px;
     text-align: left;
 }
 
-.apptDate, .apptTime, .apptDoctor, .apptLocation .apptPurpose {
+.apptDate, .apptTime, .apptDoctor, .apptLocation, .apptPurpose {
     margin-bottom: 5px;
 }
 

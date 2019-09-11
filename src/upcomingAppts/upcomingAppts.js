@@ -5,11 +5,15 @@ import './upcomingAppts.css';
 
 class UpcomingAppts extends Component {
 
+
+
     render() {
+
         const upcomingApptList = this.props.store.upcomingAppts.map((listing, index) => (
+            
             <ul key={index} className="apptCardListing">
             <li className="apptDate">
-                    {listing.apptDate}
+                    {(new Date(listing.apptDate)).toLocaleDateString()}
                  </li>
                  <li className="apptTime">
                      {listing.apptTime}
@@ -37,13 +41,16 @@ class UpcomingAppts extends Component {
   return (
      <div className="myUpcomingAppts">
          <h1 className="myUpcomingApptsHeader"> My Upcoming Appointments</h1>
-         <Calendar />
-         <div className="apptCard">
+         <Calendar
+          />
+          <div className="apptCard">
+         <div className="apptCardInfo">
              {upcomingApptList}
+             <div className="dropNoteContent">
+                 {additionalNotes}
+            </div>
+            </div>
              <div className="apptCardButtons">
-             <button className="apptCardButtonsList" type="submit">
-                 Notes
-             </button>
              <button className="apptCardButtonsList" type="submit">
                  Edit
              </button>
@@ -51,10 +58,8 @@ class UpcomingAppts extends Component {
                  Attended
              </button>
              </div>
-             <div className="dropNoteContent">
-                 {additionalNotes}
-            </div>
-         </div>
+             </div>
+         
          <Link to='/addAppt' className="addApptLink">+ Add New Appointment</Link>
 
       </div>

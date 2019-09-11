@@ -50,7 +50,7 @@ class EditPastAppt extends Component {
               </label>
               </div>
               <div className="insuranceBill">
-              <label htmlFor="insuranceBill">Bill From Insurance
+              <label htmlFor="insuranceBill">Insurance says I owe
              <input 
              name="insuranceBill"
              type="text"
