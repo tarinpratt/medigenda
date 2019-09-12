@@ -22,7 +22,6 @@ class PastAppts extends Component {
 
         const findByDate = (apptArray=[], apptDate) => 
         apptArray.find(date => date.apptDate === apptDate) 
-        
 
         const date = findByDate(apptArray, this.state.date);
         console.log('date', date)
@@ -35,7 +34,7 @@ class PastAppts extends Component {
                 <div className="pastAppt">
             <ul className="pastApptCardListing">
             <li className="apptDate">
-                { (new Date(listing.apptDate)).toLocaleDateString() }
+                { (new Date(listing.apptDate)).toLocaleDateString("en-US") }
             </li>
             <li className="apptTime">
                 {listing.apptTime}
@@ -98,6 +97,7 @@ class PastAppts extends Component {
              <input 
              name="date"
              type="date"
+
              value={this.state.date}
              onChange={this.handleChangeDate}
               ></input>

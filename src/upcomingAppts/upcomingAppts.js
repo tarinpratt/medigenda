@@ -13,7 +13,7 @@ class UpcomingAppts extends Component {
             
             <ul key={index} className="apptCardListing">
             <li className="apptDate">
-                    {(new Date(listing.apptDate)).toLocaleDateString()}
+                    {(new Date(listing.apptDate)).toLocaleDateString("en-US")}
                  </li>
                  <li className="apptTime">
                      {listing.apptTime}

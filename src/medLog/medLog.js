@@ -6,9 +6,10 @@ import './medLog.css';
 class MedLog extends Component {
 
   render() {
-    const medList = this.props.store.medLog.map((listing, index) => (
+    const meds = this.props.store
+    const medList = meds.medLog.map((listing, index) => (
       <tr key={index}>
-      <td>{(new Date(listing.date)).toLocaleDateString()}</td>
+      <td>{(new Date(listing.date)).toLocaleDateString("en-US")}</td>
       <td>{listing.time}</td>
       <td>{listing.medName}</td>
       <td>{listing.amountTaken}</td>
