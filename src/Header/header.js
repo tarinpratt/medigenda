@@ -6,12 +6,10 @@ import './header.css';
 class Header extends Component {
   handleLogoutClick = e => {
     TokenService.clearAuthToken() 
-    console.log("clicked this bull shit")
   }
 
 
   renderLogoutLink() {
-    console.log("LOG OUT")
     return (
       <div className='Header__logged-in'>
         <Link
@@ -24,7 +22,6 @@ class Header extends Component {
   }
 
   renderLoginLink() {
-    console.log("LOGIN")
     return (
       <div className='Header__not-logged-in'>
         <Link

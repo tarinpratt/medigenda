@@ -34,7 +34,6 @@ class LoginForm extends Component {
     
     render() {
         const { error } = this.state
-        console.log(this.props)
   return (
      <form id='loginForm' onSubmit={this.handleSubmitJwtAuth}>
          <h3>Log In</h3>

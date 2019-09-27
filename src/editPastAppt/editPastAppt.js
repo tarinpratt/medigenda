@@ -30,7 +30,6 @@ class EditPastAppt extends Component {
            return res.json()
     })
         .then(responseData => {
-          console.log(responseData)
           this.setState({
            id: responseData.id,
            copay: responseData.copay,
@@ -126,7 +125,6 @@ class EditPastAppt extends Component {
 
 
     render() {
-      console.log(this.state.copay)
       const editPastAppt = this.state.pastAppts.map((listing, index) => (
         <ul key={index} className="apptCardListing">
         <li onClick={e => this.onSort(e, 'appt_date')}className="apptDate">

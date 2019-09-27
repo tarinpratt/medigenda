@@ -45,7 +45,6 @@ const UpcomingApptsApiService = {
         doc_bill,
         insurance_bill,
         upcoming_appt
-       // user_id: 1
       }),
     })
       .then(res =>

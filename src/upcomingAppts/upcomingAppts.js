@@ -12,20 +12,14 @@ class UpcomingAppts extends Component {
             showAppts: true,
             upcoming_appt: true     
         };
-        //this.onSort = this.onSort.bind(this)
+
         this.tConvert = this.tConvert.bind(this)      
     }
 
     handleChangeDate = e => {
         this.setState({ date: e.target.value })
       };
-    
-    // onSort(e, sortKey) {
-    //     const upcoming_appts = this.state.upcoming_appts;
-    //     upcoming_appts.sort((a, b) => a[sortKey].localeCompare(b[sortKey]))
-    //     this.setState({upcoming_appts})
-    //   }
-    
+
     componentDidMount(){
         UpcomingApptsApiService.getEntries()
         .then((appts) => {

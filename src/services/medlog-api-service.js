@@ -3,7 +3,6 @@ import TokenService from '../services/token-service'
 
 const MedLogApiService = {
   getEntries() {
-    console.log("FETCHING DATA")
     return fetch(`${config.API_ENDPOINT}/medlog`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
@@ -18,7 +17,6 @@ const MedLogApiService = {
           
       })
       .then(data => {
-        console.log("returned data =", data)
         return data
       })
 

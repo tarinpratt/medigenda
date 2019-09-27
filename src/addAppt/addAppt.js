@@ -21,7 +21,6 @@ class AddAppt extends Component {
       handleSubmit = ev => {
         ev.preventDefault()
         const { appt_date, appt_time, appt_doctor, appt_location, appt_purpose, appt_notes } = ev.target
-        console.log(appt_date.value, appt_time.value, appt_doctor.value, appt_location.value, appt_purpose.value, appt_notes.value, /*copay.value, doc_bill.value, insurance_bill.value, upcoming_appt.value*/)
 
         UpcomingApptsApiService.postEntry(
             appt_date.value, 
