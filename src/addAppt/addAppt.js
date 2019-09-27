@@ -1,52 +1,60 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import UpcomingApptsApiService from '../services/upcoming_appts-api-service';
 import './addAppt.css';
 
 class AddAppt extends Component {
-    constructor(props) {
+       constructor(props) {
         super(props);
         this.state = {
-            apptDate: '',
-            time: '',
-            apptLocation: '',
-            apptDoctor: '',
-            purposeForVisit: '',
-            apptNotes: '',
+            apptEntries: []
         };
     }
+    
+    static defaultProps = {
+        copay: '0',
+        doc_bill: '0',
+        insurance_bill: '0',
+        upcoming_appt: true
+      }
 
-    handleChangeApptDate = e => {
-        this.setState({ apptDate: e.target.value })
-      };
-      handleChangeTime = e => {
-        this.setState({ time: e.target.value })
-      };
-      handleChangeApptLocation = e => {
-        this.setState({ apptLocation: e.target.value })
-      };
-      handleChangeApptDoctor = e => {
-        this.setState({ apptDoctor: e.target.value })
-      };
-      handleChangePurposeForVisit = e => {
-        this.setState({ purposeForVisit: e.target.value })
-      };
-      handleChangeApptNotes = e => {
-        this.setState({ apptNotes: e.target.value })
-      };
+      handleSubmit = ev => {
+        ev.preventDefault()
+        const { appt_date, appt_time, appt_doctor, appt_location, appt_purpose, appt_notes } = ev.target
+        console.log(appt_date.value, appt_time.value, appt_doctor.value, appt_location.value, appt_purpose.value, appt_notes.value, /*copay.value, doc_bill.value, insurance_bill.value, upcoming_appt.value*/)
+
+        UpcomingApptsApiService.postEntry(
+            appt_date.value, 
+            appt_time.value, 
+            appt_doctor.value, 
+            appt_location.value, 
+            appt_purpose.value, 
+            appt_notes.value, 
+            this.props.copay,
+            this.props.doc_bill,
+            this.props.insurance_bill,
+            this.props.upcoming_appt
+            )
+            .then((appt) => {
+            this.setState({
+                apptEntries: [...this.state.apptEntries, appt]
+            })
+            this.props.history.push('/upcomingAppts')
+        })
+        
+      }
 
     render() {
         
   return (
-     <form id='addApptForm'>
+     <form id='addApptForm' onSubmit={this.handleSubmit}>
          <h3>Add My Appointment</h3>
          <div className='apptDate'>
              <label htmlFor='addApptForm_apptDate'>
                  Date 
                  <input 
-                 name='apptDate'
+                 name='appt_date'
                  type='date'
-                 value={this.state.apptDate}
-                 onChange={this.handleChangeApptDate}
                  required
                  id='addApptForm_apptDate'>
                  </input>
@@ -56,10 +64,8 @@ class AddAppt extends Component {
              <label htmlFor='addApptForm_apptTime'>
                  Time
                  <input 
-                 name='time'
+                 name='appt_time'
                  type='time'
-                 value={this.state.time}
-                 onChange={this.handleChangeTime}
                  required
                  id='addApptForm_apptTime'>
                  </input>
@@ -69,10 +75,8 @@ class AddAppt extends Component {
              <label htmlFor='addApptForm_apptLocation'>
                  Location
                  <input 
-                 name='apptLocation'
+                 name='appt_location'
                  type='text'
-                 value={this.state.apptLocation}
-                 onChange={this.handleChangeApptLocation}
                  required
                  id='addApptForm_apptLocation'>
                  </input>
@@ -82,10 +86,8 @@ class AddAppt extends Component {
              <label htmlFor='addApptForm_apptDoctor'>
                  Doctor
                  <input 
-                 name='apptDoctor'
+                 name='appt_doctor'
                  type='text'
-                 value={this.state.apptDoctoe}
-                 onChange={this.handleChangeApptDoctor}
                  required
                  id='addApptForm_apptDoctor'>
                  </input>
@@ -95,10 +97,8 @@ class AddAppt extends Component {
              <label htmlFor='addApptForm_purposeForVisit'>
                  Purpose For Visit
                  <input 
-                 name='purposeForVisit'
+                 name='appt_purpose'
                  type='text'
-                 value={this.state.purposeForVisit}
-                 onChange={this.handleChangePurposeForVisit}
                  required
                  id='addApptForm_purposeForVisit'>
                  </input>
@@ -108,11 +108,8 @@ class AddAppt extends Component {
              <label htmlFor='addApptForm_apptNotes'>
                  Additional Notes
                  <input 
-                 name='apptNotes'
+                 name='appt_notes'
                  type='text'
-                 value={this.state.apptNotes}
-                 onChange={this.handleChangeApptNotes}
-                 required
                  id='addApptForm_apptNotes'>
                  </input>
              </label>

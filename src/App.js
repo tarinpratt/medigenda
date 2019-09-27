@@ -1,51 +1,49 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import Header from './Header/header';
 import RegistrationForm from './registrationForm/registrationForm'
-import LoginForm from './loginForm/loginForm'
+import LoginPage from './loginPage/loginPage'
 import MedLog from './medLog/medLog'
 import UpcomingAppts from './upcomingAppts/upcomingAppts'
 import AddAppt from './addAppt/addAppt'
 import EditPastAppt from './editPastAppt/editPastAppt'
+import AddMedForm from './addMedForm/addMedForm'
+import EditUpcomingAppt from './editUpcomingAppt/editUpcomingAppt'
 import PastAppts from './pastAppts/pastAppts'
 import Nav from './Nav/nav'
 import HomePage from './homePage/homePage'
+import PrivateRoute from './Utils/PrivateRoute'
+import PublicOnlyRoute from './Utils/PublicOnlyRoute'
 import './App.css';
 
+
 class App extends Component {
-  static defaultProps = {
-    store: {
-      medLog: [],
-      upcomingAppts: [],
-      pastAppts: [],
-    }
-  };
 
   render() {
-const { store } = this.props
+
   return (
     <main className='App'>
       <Header />
       <Nav />
       
       <Route exact path='/' component={HomePage}/>
-      <Route path='/register' component={RegistrationForm} />
-      <Route path='/login' component={LoginForm} />
-      <Route path='/medLog'
-      render={(props) => <MedLog {...props} store={store} />}
+      <PublicOnlyRoute path='/register' component={RegistrationForm} />
+      <PublicOnlyRoute path='/login' component={LoginPage}
+  />
+      <PrivateRoute path='/medlog' component={MedLog}
       />
-      <Route path='/upcomingAppts'
-       render={(props) => <UpcomingAppts {...props} store={store} />}
+      <PrivateRoute path='/upcomingAppts' component={UpcomingAppts}
        />
-      <Route path='/addAppt' component={AddAppt} />
-      <Route path='/pastAppts' 
-      render={(props) => <PastAppts {...props} store={store} />}
-      />
-      <Route path='/editPastAppt' component={EditPastAppt} />
+      <PrivateRoute path='/addAppt' component={AddAppt} />
+      <PrivateRoute path='/pastAppts' component={PastAppts}/>
+      <PrivateRoute path='/addMed' component={AddMedForm} />
+      <PrivateRoute path='/editPastAppt/:upcomingApptId' component={EditPastAppt} />
+      <PrivateRoute path='/editUpcomingAppt/:upcomingApptId' component={EditUpcomingAppt} />
+      
 
     </main>
   );
 }
 }
 
-export default App;
+export default withRouter(App);

@@ -1,79 +1,75 @@
 import React, { Component } from 'react';
+import TokenService from '../services/token-service'
+import AuthApiService from '../services/auth-api-service'
+import { Button, Input } from '../Utils/Utils'
 import './loginForm.css';
 
 class LoginForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: '',
-            email: '',
-            password: '',
-        };
-    }
+  static defaultProps = {
+    onLoginSuccess: () => {}
+  }
 
-    handleChangeUserName = e => {
-        this.setState({ username: e.target.value })
-      };
-    
-      handleChangeEmail = e => {
-        this.setState({ email: e.target.value })
-      };
-    
-      handleChangePassword = e => {
-        this.setState({ password: e.target.value })
-      };
-
-    render() {
+     state = { error: null }
   
+       handleSubmitJwtAuth = ev => {
+        ev.preventDefault()
+        this.setState({ error: null })
+        const { username, password } = ev.target
+        AuthApiService.postLogin({
+          username: username.value,
+          password: password.value,
+        })
+          .then(res => {
+            username.value = ''
+            password.value = ''
+            TokenService.saveAuthToken(res.authToken)
+            this.props.onLoginSuccess()
+           
+          })
+          .catch(res => {
+            this.setState({ error: res.error })
+          })
+      }
+    
+    
+    render() {
+        const { error } = this.state
+        console.log(this.props)
   return (
-     <form id='loginForm'>
+     <form id='loginForm' onSubmit={this.handleSubmitJwtAuth}>
          <h3>Log In</h3>
-         <div className='userName'>
-             <label htmlFor='loginForm_userName'>
+         <div role='alert'>
+          {error && <p className='red'>{error}</p>}
+        </div>
+         <div className='username'>
+             <label htmlFor='loginForm_username'>
                  Username 
-                 <input 
-                 name='userName'
+                 <Input 
+                 name='username'
                  type='text'
-                 value={this.state.username}
-                 onChange={this.handleChangeUserName}
                  required
-                 id='loginForm_userName'>
-                 </input>
-             </label>
-         </div>
-         <div className='email'>
-             <label htmlFor='loginForm_email'>
-                 Email 
-                 <input 
-                 name='email'
-                 type='email'
-                 value={this.state.email}
-                 onChange={this.handleChangeEmail}
-                 required
-                 id='loginForm_email'>
-                 </input>
+                 id='loginForm_username'>
+                 </Input>
              </label>
          </div>
          <div className='password'>
              <label htmlFor='loginForm_password'>
                  Password 
-                 <input 
+                 <Input 
                  name='password'
                  type='password'
-                 value={this.state.password}
-                 onChange={this.handleChangePassword}
                  required
                  id='loginForm_password'>
-                 </input>
+                 </Input>
              </label>
          </div>
-         <button type='submit'>
+         <Button type='submit'>
              Log In
-         </button>
+         </Button>
         
      </form>
   );
 }
 }
 
-export default LoginForm;
+export default LoginForm

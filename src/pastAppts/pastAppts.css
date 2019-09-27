@@ -3,6 +3,7 @@
     flex-direction: row;
 }
 .pastApptCardListing {
+    text-align: left;
     display: flex;
     flex-direction: column;
     list-style-type: none;
@@ -17,7 +18,8 @@
 }
 
 .pastApptCard {
-    border: 1px solid black;
+    margin-top: 0px;
+    background-color: rgb(237, 247, 218);
     border-radius: 5px;
     width: 380px;
 }

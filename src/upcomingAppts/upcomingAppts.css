@@ -3,12 +3,25 @@
 }
 .apptCardInfo {
     display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
-.apptCard {
+/* .apptCard {
     border-radius: 5px;
     border: 1px solid black;
+} */
+
+.upcomingApptCard {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(237, 247, 218)
+}
+
+.upcomingAppt {
+    display: flex;
+    flex-direction: row;
+    height: 125px;
 }
 .apptCardListing {
     padding-left: 10px;
@@ -16,12 +29,16 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
 }
 
+
+
 .apptCardButtons {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     margin: 5px;
+    padding-top: 0px;
 }
 
 
@@ -59,6 +76,32 @@
 }
 
 .apptDate, .apptTime, .apptDoctor, .apptLocation, .apptPurpose {
+    width: 150px;
     margin-bottom: 5px;
 }
 
+.apptDate:hover {
+    cursor: pointer;
+    color: green;
+}
+
+.viewAllButton {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+
+.otherNotes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.upApptEdit {
+    width: 100px;
+}
+
+.upApptEdit:hover {
+    cursor: pointer;
+}

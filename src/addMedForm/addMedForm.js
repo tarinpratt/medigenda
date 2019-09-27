@@ -1,42 +1,34 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './addMedForm.css';
+import MedLogApiService from '../services/medlog-api-service';
 
 class AddMedForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            medDate: '',
-            time: '',
-            medName: '',
-            amountTaken: '',
-            reasonForIntake: '',
-
+            medlog: []
         };
     }
-
-    handleChangeMedDate = e => {
-        this.setState({ medDate: e.target.value})
-      };
+      handleSubmit = ev => {
+        ev.preventDefault()
+        const { date, time, medname, amounttaken, reason } = ev.target
+        MedLogApiService.postEntry(
+            date.value,
+            time.value,
+            medname.value,
+            amounttaken.value, 
+            reason.value )
+        .then((med) => {
+            this.setState({
+                medlog: [...this.state.medlog, med]
+            })
+            this.props.history.push('/medlog')
+        })
+      }
     
-      handleChangeTime = e => {
-        this.setState({ time: e.target.value })
-      };
-    
-      handleChangeMedName = e => {
-        this.setState({ medName: e.target.value })
-      };
-    
-      handleChangeAmountTaken = e => {
-        this.setState({ amountTaken: e.target.value })
-      };
-      handleChangeReasonForIntake = e => {
-        this.setState({ reasonForIntake: e.target.value })
-      };
-
-
     render() {
-      console.log(this.state.medDate)
-
+      
   return (
      <form id='addMedForm' onSubmit={this.handleSubmit}>
          <h3>New Entry</h3>
@@ -44,10 +36,8 @@ class AddMedForm extends Component {
              <label htmlFor='addMedForm_medDate'>
                  Date 
                  <input 
-                 name='medDate'
+                 name='date'
                  type='date'
-                 value={this.state.medDate}
-                 onChange={this.handleChangeMedDate}
                  required
                  id='addMedForm_medDate'>
                  </input>
@@ -59,8 +49,6 @@ class AddMedForm extends Component {
                  <input 
                  name='time'
                  type='time'
-                 value={this.state.time}
-                 onChange={this.handleChangeTime}
                  required
                  id='addMedForm_time'>
                  </input>
@@ -70,10 +58,8 @@ class AddMedForm extends Component {
              <label htmlFor='addMedForm_medName'>
                  Medication Name
                  <input 
-                 name='medName'
+                 name='medname'
                  type='text'
-                 value={this.state.medName}
-                 onChange={this.handleChangeMedName}
                  required
                  id='addMedForm_medName'>
                  </input>
@@ -83,12 +69,12 @@ class AddMedForm extends Component {
              <label htmlFor='addMedForm_amountTaken'>
                  Amount Taken
                  <input 
-                 name='amountTaken'
-                 type='number'
-                 value={this.state.amountTaken}
-                 onChange={this.handleChangeAmountTaken}
+                 name='amounttaken'
+                 type='text'
+                 placeholder='1/2 pill'
                  required
                  id='addMedForm_amountTaken'>
+                
                  </input>
              </label>
          </div>
@@ -96,10 +82,9 @@ class AddMedForm extends Component {
              <label htmlFor='addMedForm_reasonForIntake'>
                  Reason For Intake
                  <input 
-                 name='reasonForIntake'
+                 name='reason'
                  type='text'
-                 value={this.state.reasonForIntake}
-                 onChange={this.handleChangeReasonForIntake}
+                 placeholder='pain'
                  required
                  id='addMedForm_reasonForIntake'>
                  </input>
@@ -108,6 +93,7 @@ class AddMedForm extends Component {
          <button type='submit'>
              Add Entry
          </button>
+         <Link to='/medlog'><button className="addApptButtons" type="submit">Back</button></Link>
         
      </form>
   );

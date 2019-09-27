@@ -1,13 +1,14 @@
-table {
-    padding-left: 7px;
-  
-}
+
 th {
     margin: 0px;
     padding-right: 5px;
     padding-left: 0px;
     border-bottom: 2px black solid;
    
+}
+th:hover {
+    cursor: pointer;
+    color: green;
 }
 
 td {

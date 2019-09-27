@@ -1,21 +1,67 @@
 import React, { Component } from 'react';
-
-import AddMedForm from '../addMedForm/addMedForm'
+import MedLogApiService from'../services/medlog-api-service'
+import { Link } from 'react-router-dom'
 import './medLog.css';
 
-class MedLog extends Component {
 
+
+class MedLog extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        medlog: [],
+    };
+    this.onSort = this.onSort.bind(this)
+    this.tConvert = this.tConvert.bind(this)
+}
+
+onSort(sortKey) {
+  const medlog = this.state.medlog;
+  medlog.sort((a, b) => a[sortKey].localeCompare(b[sortKey]))
+   this.setState({medlog})
+}
+
+tConvert (time) {
+  // Check correct time format and split into components
+  time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+  if (time.length > 1) { // If time format correct
+    time = time.slice (1); // Remove full string match value
+    time = time.slice (0, 3);
+    time[5] = +time[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
+    time[0] = +time[0] % 12 || 12; // Adjust hours
+    
+  }
+  return time.join (''); // return adjusted time or original string
+}
+
+  componentDidMount(){
+    MedLogApiService.getEntries()
+    .then((medlog) => {
+      return medlog
+    })
+    .then((medlogList) => {
+      this.setState({
+        medlog: medlogList
+      })
+    })
+    
+  }
   render() {
-    const meds = this.props.store
-    const medList = meds.medLog.map((listing, index) => (
+    const medState = this.state.medlog;
+    const sortedByDate = medState.sort((a, b) => new Date(...a.date.split('/').reverse())
+     - new Date(...b.date.split('/').reverse()));
+
+    const medList = sortedByDate.map((listing, index) => (
       <tr key={index}>
-      <td>{(new Date(listing.date)).toLocaleDateString("en-US")}</td>
-      <td>{listing.time}</td>
-      <td>{listing.medName}</td>
-      <td>{listing.amountTaken}</td>
+      <td>{(new Date(listing.date).toLocaleDateString("en-US", {timeZone: 'America/Phoenix'}))}</td>
+      <td>{this.tConvert(listing.time)}</td>
+      <td>{listing.medname}</td>
+      <td>{listing.amounttaken}</td>
       <td>{listing.reason}</td>
       </tr>
+  
     )
+    
     )
     
   return (
@@ -24,20 +70,20 @@ class MedLog extends Component {
           <table>
               <thead>
               <tr>
-              <th className="date">Date</th>
-              <th className="time">Time</th>
-              <th className="medName">Medication</th>
-              <th className="amountTaken">Amount</th>
-              <th className="reason">Reason For Intake</th>
+              <th onClick={e => this.onSort(e, 'date')} className="date">Date</th>
+              <th onClick={e => this.onSort(e, 'time')}className="time">Time</th>
+              <th onClick={e => this.onSort(e, 'medname')}className="medName">Medication</th>
+              <th onClick={e => this.onSort(e, 'amounttaken')}className="amountTaken">Amount</th>
+              <th onClick={e => this.onSort(e, 'reason')}className="reason">Reason For Intake</th>
               </tr>
               </thead>
               <tbody>
                 {medList}
               </tbody>
           </table>
-          <div className="medForm">
-            <AddMedForm />
-        </div>
+         <Link to='/addMed' className="addMedLink"><button type='submit'>
+             + Add New Entry
+         </button></Link>
 
       </div>
  

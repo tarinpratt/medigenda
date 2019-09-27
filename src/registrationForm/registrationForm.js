@@ -1,41 +1,60 @@
 import React, { Component } from 'react';
+import AuthApiService from '../services/auth-api-service';
+
 import './registrationForm.css';
 
 class RegistrationForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: '',
-            email: '',
-            password: '',
-        };
-    }
+    static defaultProps = {
+        history: {
+          push: () => {},
+        },
+      }
 
-    handleChangeUserName = e => {
-        this.setState({ username: e.target.value })
-      };
+      state = { error: null }
     
-      handleChangeEmail = e => {
-        this.setState({ email: e.target.value })
-      };
+      handleRegistrationSuccess = user => {
+        const { history } = this.props
+        history.push('/login')
+      }
+
+      handleSubmit = ev => {
+        ev.preventDefault()
+        const { username, email, password } = ev.target
     
-      handleChangePassword = e => {
-        this.setState({ password: e.target.value })
-      };
+        this.setState({ error: null })
+         AuthApiService.postUser({
+           username: username.value,
+           email: email.value,
+           password: password.value,
+         })
+           .then(user => {
+    
+        username.value = ''
+        email.value = ''
+        password.value = ''
+        this.handleRegistrationSuccess()
+           })
+          .catch(res => {
+            this.setState({ error: res.error})
+          })
+      }
+
 
     render() {
- 
+ const { error } = this.state
   return (
-     <form id='registrationForm'>
+     <form id='registrationForm'
+     onSubmit={this.handleSubmit}>
          <h3>Register</h3>
+         <div role='alert'>
+          {error && <p className='red'>{error}</p>}
+        </div>
          <div className='userName'>
              <label htmlFor='registrationForm_userName'>
                  Username 
                  <input 
                  name='username'
                  type='text'
-                 value={this.state.username}
-                 onChange={this.handleChangeUserName}
                  required
                  id='registrationForm_userName'>
                  </input>
@@ -47,8 +66,6 @@ class RegistrationForm extends Component {
                  <input 
                  name='email'
                  type='email'
-                 value={this.state.email}
-                 onChange={this.handleChangeEmail}
                  required
                  id='registrationForm_email'>
                  </input>
@@ -60,8 +77,6 @@ class RegistrationForm extends Component {
                  <input 
                  name='password'
                  type='password'
-                 value={this.state.password}
-                 onChange={this.handleChangePassword}
                  required
                  id='registrationForm_password'>
                  </input>
