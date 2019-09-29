@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UpcomingApptsApiService from'../services/upcoming_appts-api-service'
+import UpcomingApptsApiService from'../../services/upcoming_appts-api-service'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import './pastAppts.css';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MedLogApiService from'../services/medlog-api-service'
+import MedLogApiService from'../../services/medlog-api-service'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import './medLog.css';

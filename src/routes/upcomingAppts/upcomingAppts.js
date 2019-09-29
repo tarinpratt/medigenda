@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import moment from 'moment'
-import UpcomingApptsApiService from'../services/upcoming_appts-api-service'
+import UpcomingApptsApiService from'../../services/upcoming_appts-api-service'
 import './upcomingAppts.css';
 
 class UpcomingAppts extends Component {

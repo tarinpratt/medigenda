@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import './addMedForm.css';
-import MedLogApiService from '../services/medlog-api-service';
+import MedLogApiService from './../../services/medlog-api-service';
 
 class AddMedForm extends Component {
     constructor(props) {

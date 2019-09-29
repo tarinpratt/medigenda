@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import { Route, withRouter } from 'react-router-dom'
-import Header from './Header/header';
-import RegistrationForm from './registrationForm/registrationForm'
-import LoginPage from './loginPage/loginPage'
-import MedLog from './medLog/medLog'
-import UpcomingAppts from './upcomingAppts/upcomingAppts'
-import AddAppt from './addAppt/addAppt'
-import EditPastAppt from './editPastAppt/editPastAppt'
-import AddMedForm from './addMedForm/addMedForm'
-import EditUpcomingAppt from './editUpcomingAppt/editUpcomingAppt'
-import PastAppts from './pastAppts/pastAppts'
-import MedLogDemo from './demoRoutes/medlogDemo/medlogDemo'
-import UpcomingApptsDemo from './demoRoutes/upcomingApptsDemo/upcomingApptsDemo'
-import PastApptsDemo from './demoRoutes/pastApptsDemo/pastApptsDemo'
-import HomePage from './homePage/homePage'
-import PrivateRoute from './Utils/PrivateRoute'
-import PublicOnlyRoute from './Utils/PublicOnlyRoute'
+import Header from './../Header/header';
+import RegistrationForm from '../registrationForm/registrationForm'
+import LoginPage from '../loginPage/loginPage'
+import MedLog from '../routes/medLog/medLog'
+import UpcomingAppts from '../routes/upcomingAppts/upcomingAppts'
+import AddAppt from '../addForms/addAppt/addAppt'
+import EditPastAppt from '../editForms/editPastAppt/editPastAppt'
+import AddMedForm from '../addForms/addMedForm/addMedForm'
+import EditUpcomingAppt from '../editForms/editUpcomingAppt/editUpcomingAppt'
+import PastAppts from '../routes/pastAppts/pastAppts'
+import MedLogDemo from '../demoRoutes/medlogDemo/medlogDemo'
+import UpcomingApptsDemo from '../demoRoutes/upcomingApptsDemo/upcomingApptsDemo'
+import PastApptsDemo from '../demoRoutes/pastApptsDemo/pastApptsDemo'
+import HomePage from '../homePage/homePage'
+import PrivateRoute from '../Utils/PrivateRoute'
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import './App.css';
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import UpcomingApptsApiService from '../services/upcoming_appts-api-service';
+import UpcomingApptsApiService from './../../services/upcoming_appts-api-service';
 import './addAppt.css';
 
 class AddAppt extends Component {

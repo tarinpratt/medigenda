@@ -5,7 +5,7 @@
 }
 
 .backgroundImage {
-  background-image: url(./images/greenPills.jpg);
+  background-image: url(../images/greenPills.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
