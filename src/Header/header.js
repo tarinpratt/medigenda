@@ -1,11 +1,28 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import TokenService from '../services/token-service'
+import PublicNav from '../publicNav/publicNav'
+import Nav from '../Nav/nav'
 import './header.css';
 
 class Header extends Component {
   handleLogoutClick = e => {
     TokenService.clearAuthToken() 
+  }
+
+  renderPrivateNav() {
+    return (
+      <div className="privateNav">
+      <Nav /> 
+      </div>
+    )
+  }
+  renderPublicNav() {
+    return (
+      <div className="publicNav">
+      <PublicNav /> 
+      </div>
+    )
   }
 
 
@@ -46,6 +63,13 @@ class Header extends Component {
             this.renderLogoutLink()
             : this.renderLoginLink()
           } 
+
+          {
+            TokenService.hasAuthToken() ?
+            this.renderPrivateNav()
+            : this.renderPublicNav()
+          }
+          
       </header>
    
   )

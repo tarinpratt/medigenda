@@ -10,7 +10,9 @@ import EditPastAppt from './editPastAppt/editPastAppt'
 import AddMedForm from './addMedForm/addMedForm'
 import EditUpcomingAppt from './editUpcomingAppt/editUpcomingAppt'
 import PastAppts from './pastAppts/pastAppts'
-import Nav from './Nav/nav'
+import MedLogDemo from './demoRoutes/medlogDemo/medlogDemo'
+import UpcomingApptsDemo from './demoRoutes/upcomingApptsDemo/upcomingApptsDemo'
+import PastApptsDemo from './demoRoutes/pastApptsDemo/pastApptsDemo'
 import HomePage from './homePage/homePage'
 import PrivateRoute from './Utils/PrivateRoute'
 import PublicOnlyRoute from './Utils/PublicOnlyRoute'
@@ -24,12 +26,15 @@ class App extends Component {
   return (
     <main className='App'>
       <Header />
-      <Nav />
+ 
       
       <Route exact path='/' component={HomePage}/>
       <PublicOnlyRoute path='/register' component={RegistrationForm} />
       <PublicOnlyRoute path='/login' component={LoginPage}
   />
+      <PublicOnlyRoute path='/medlogDemo' component={MedLogDemo} />
+      <PublicOnlyRoute path='/upcomingApptsDemo' component={UpcomingApptsDemo} />
+      <PublicOnlyRoute path='/pastApptsDemo' component={PastApptsDemo} />
       <PrivateRoute path='/medlog' component={MedLog}
       />
       <PrivateRoute path='/upcomingAppts' component={UpcomingAppts}

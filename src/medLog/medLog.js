@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MedLogApiService from'../services/medlog-api-service'
+import moment from 'moment'
 import { Link } from 'react-router-dom'
 import './medLog.css';
 
@@ -52,8 +53,9 @@ tConvert (time) {
      - new Date(...b.date.split('/').reverse()));
 
     const medList = sortedByDate.map((listing, index) => (
+      
       <tr key={index}>
-      <td>{(new Date(listing.date).toLocaleDateString("en-US", {timeZone: 'America/Phoenix'}))}</td>
+      <td>{(moment(new Date(listing.date)).add(1, 'day').format('MM/DD'))}</td>
       <td>{this.tConvert(listing.time)}</td>
       <td>{listing.medname}</td>
       <td>{listing.amounttaken}</td>

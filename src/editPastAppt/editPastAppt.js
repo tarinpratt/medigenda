@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import config from '../config'
 import TokenService from '../services/token-service'
+import moment from 'moment'
 import './editPastAppt'
 
 class EditPastAppt extends Component {
@@ -13,6 +14,7 @@ class EditPastAppt extends Component {
           insurance_bill: '',
           appt_notes: '',
         };
+        this.tConvert = this.tConvert.bind(this);
     }
 
     componentDidMount() {
@@ -118,6 +120,18 @@ class EditPastAppt extends Component {
       })
   }
 
+  tConvert (time) {
+    time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+    if (time.length > 1) { // If time format correct
+      time = time.slice (1); 
+      time = time.slice (0, 3); // Remove full string match value
+      time[5] = +time[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
+      time[0] = +time[0] % 12 || 12; // Adjust hours
+    }
+    return time.join (''); // return adjusted time or original string
+  }
+
+
 
     
 
@@ -128,10 +142,10 @@ class EditPastAppt extends Component {
       const editPastAppt = this.state.pastAppts.map((listing, index) => (
         <ul key={index} className="apptCardListing">
         <li onClick={e => this.onSort(e, 'appt_date')}className="apptDate">
-                {(new Date(listing.appt_date).toLocaleDateString("en-US", {timeZone: 'America/Phoenix'}))}
+                {(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}
              </li>
              <li className="apptTime">
-                 {listing.appt_time}
+                 {this.tConvert(listing.appt_time)}
              </li>
              <li className="apptLocation">
                  {listing.appt_location}

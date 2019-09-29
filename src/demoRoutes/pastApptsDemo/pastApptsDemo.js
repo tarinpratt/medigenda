@@ -1,38 +1,25 @@
 import React, { Component } from 'react';
-import UpcomingApptsApiService from'../services/upcoming_appts-api-service'
-import { Link } from 'react-router-dom'
 import moment from 'moment'
-import './pastAppts.css';
 
 
-class PastAppts extends Component {
+class PastApptsDemo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            past_appts: [],
             date: '',
-            upcoming_appt: false,
             showAppts: true
         };
         this.tConvert = this.tConvert.bind(this)
+        this.handleAlert = this.handleAlert.bind(this)
     }
 
     handleChangeDate = e => {
         this.setState({ date: e.target.value })
       };
 
-        componentDidMount(){
-            UpcomingApptsApiService.getEntries()
-            .then((appts) => {
-              return appts
-            })
-            .then((apptList) => {
-              this.setState({
-                past_appts: apptList
-              })
-            })           
-          }
-
+    handleAlert() {
+        alert("You must register for an account to alter appointments.")
+    }
           renderAppts() {
             this.setState({
               showAppts: !this.state.showAppts
@@ -52,14 +39,43 @@ class PastAppts extends Component {
 
 
     render(){
+
+        const pastAppts= [
+            {
+                id: '1',
+                appt_date: '2019-09-13',
+                appt_time: '11:30 am',
+                appt_doctor: 'Dr.Nagaiah',
+                appt_location: 'Arizona Oncology',
+                appt_purpose: 'bloodwork',
+                appt_notes: `Still haven't heard from insurance`,
+                copay: '$30',
+                doc_bill: '$0',
+                insurance_bill: '$0',
+                upcoming_appt: false  
+            },
+            {
+                id: '2',
+                appt_date: '2019-09-15',
+                appt_time: '10:30 am',
+                appt_doctor: 'Dr.Nagaiah',
+                appt_location: 'Arizona Oncology',
+                appt_purpose: 'chemo treatment #2',
+                appt_notes: '',
+                copay: '$45',
+                doc_bill: '$75.26',
+                insurance_bill: '$0',
+                upcoming_appt: false            
+            }
+        ]
         
-        const apptState = this.state.past_appts;
-        const sortedByDate = apptState.sort((a, b) => new Date(...a.appt_date.split('/').reverse())
-        - new Date(...b.appt_date.split('/').reverse()));
-        const pastAppts = sortedByDate
-        .filter((appt) => appt.upcoming_appt === false)
+        // const apptState = this.state.past_appts;
+        // const sortedByDate = apptState.sort((a, b) => new Date(...a.appt_date.split('/').reverse())
+        // - new Date(...b.appt_date.split('/').reverse()));
+        // const pastAppts = sortedByDate
+        // .filter((appt) => appt.upcoming_appt === false)
         const searchDates = pastAppts
-        .filter((dates) => dates.appt_date === this.state.date+'T00:00:00.000Z')
+        .filter((dates) => dates.appt_date === this.state.date)
 
         const entirePastApptList = pastAppts.map((listing, index) => (    
             <div key={index} className="pastApptCard">
@@ -106,9 +122,9 @@ class PastAppts extends Component {
             </tbody>
         </table>
         <div className="pastApptCardButtons">
-            <Link to={`/editPastAppt/${listing.id}`}><button className="pastApptCardButtonsList" type="submit">
+            <button onClick={this.handleAlert} className="pastApptCardButtonsList" type="submit">
                 Edit
-            </button></Link>
+            </button>
             </div>
             </div>
         )
@@ -159,9 +175,9 @@ class PastAppts extends Component {
               </tbody>
           </table>
           <div className="pastApptCardButtons">
-             <Link to={`/editPastAppt/${listing.id}`}><button className="pastApptCardButtonsList" type="submit">
+             <button onClick={this.handleAlert} className="pastApptCardButtonsList" type="submit">
                  Edit
-             </button></Link>
+             </button>
              </div>
              </div>
           )
@@ -169,7 +185,6 @@ class PastAppts extends Component {
 
           const dateSearch = pastApptList.length >= 1 ?
           pastApptList : "No appointments on this date";
-
 
   return (
      <div className="myPastAppts">
@@ -195,15 +210,16 @@ class PastAppts extends Component {
                  >
                  </input>
             </form>
-            }   
+            } 
+            
+ 
+         <div className="pastApptCard">
+             {!this.state.showAppts ?
+             dateSearch
+            : null}
+         </div> 
 
-            <div className="pastApptCard">
-             {
-                 !this.state.showAppts ?
-                 dateSearch 
-                 : null
-             }
-            </div>
+ 
 
       <div className="searchedPastAppts">
             {
@@ -214,11 +230,10 @@ class PastAppts extends Component {
             : null
             }
       </div>
-
       </div>
  
   );
 }
 }
 
-export default PastAppts;
+export default PastApptsDemo;

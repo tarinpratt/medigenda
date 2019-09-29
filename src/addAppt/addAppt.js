@@ -44,6 +44,7 @@ class AddAppt extends Component {
       }
 
     render() {
+        console.log(this.state.apptEntries)
         
   return (
      <form id='addApptForm' onSubmit={this.handleSubmit}>

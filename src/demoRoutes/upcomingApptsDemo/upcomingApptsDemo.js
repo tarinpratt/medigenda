@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import moment from 'moment'
-import UpcomingApptsApiService from'../services/upcoming_appts-api-service'
-import './upcomingAppts.css';
 
-class UpcomingAppts extends Component {
+class UpcomingApptsDemo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            upcoming_appts: [],
             date: '',
-            showAppts: true,
-            upcoming_appt: true     
+            showAppts: true
         };
         this.tConvert = this.tConvert.bind(this)      
     }
@@ -19,19 +14,7 @@ class UpcomingAppts extends Component {
     handleChangeDate = e => {
         this.setState({ date: e.target.value })
       };
-
-    componentDidMount(){
-        UpcomingApptsApiService.getEntries()
-        .then((appts) => {
-          return appts
-        })
-        .then((apptList) => {
-          this.setState({
-            upcoming_appts: apptList
-          })
-        })      
-      }
-    renderAppts() {
+      renderAppts() {
         this.setState({
           showAppts: !this.state.showAppts
         })
@@ -48,17 +31,43 @@ class UpcomingAppts extends Component {
         return time.join (''); // return adjusted time or original string
       }
 
+      handleAlert() {
+          alert("You must register for an account to add or alter appointments.")
+      }
+
    
     
 
     render() {
-      const apptState = this.state.upcoming_appts;
-      const sortedByDate = apptState.sort((a, b) => new Date(...a.appt_date.split('/').reverse())
-       - new Date(...b.appt_date.split('/').reverse()));
-        //filter appt status to render only upcoming
-        const upcomingAppts = sortedByDate
-          .filter((appt) => appt.upcoming_appt === true)
-        //map through only upcoming appts  
+       const upcomingAppts= [
+            {
+                id: '1',
+                appt_date: '2019-11-23',
+                appt_time: '11:30 am',
+                appt_doctor: 'Dr.Nagaiah',
+                appt_location: 'Arizona Oncology',
+                appt_purpose: 'bloodwork',
+                appt_notes: `Don't forget to ask why copay was more on last visit.`,
+                copay: '$30',
+                doc_bill: '$0',
+                insurance_bill: '$0',
+                upcoming_appt: true  
+            },
+            {
+                id: '2',
+                appt_date: '2019-11-15',
+                appt_time: '10:30 am',
+                appt_doctor: 'Dr.Nagaiah',
+                appt_location: 'Arizona Oncology',
+                appt_purpose: 'chemo treatment #3',
+                appt_notes: 'Take lorazepam 30 min before to avoid anxiety attack.',
+                copay: '$45',
+                doc_bill: '$75.26',
+                insurance_bill: '$0',
+                upcoming_appt: true            
+            }
+        ]
+              
          const upcomingApptList = upcomingAppts.map((listing, index) => (
            <div key={index} className="upcomingApptCard">
               <div className="upcomingAppt">
@@ -87,20 +96,18 @@ class UpcomingAppts extends Component {
                  </ul>
                  </div>
                   <div className="apptCardButtons">
-                  <Link to={`/editUpcomingAppt/${listing.id}`} upcoming_appts = {this.state.upcoming_appts}><button type="submit" className="upApptEdit">
+                  <button className="upApptEdit" onClick={this.handleAlert}>
                   Edit
                   </button>
-                  </Link>
                   </div>
             
             </div>
             )
           )
-          //filter through dates that match input date to render
-          const searchDates = upcomingAppts
-          .filter((dates) => dates.appt_date === this.state.date+'T00:00:00.000Z')
-          //map through only the selected input date for rendering
 
+          const searchDates = upcomingAppts
+          .filter((dates) => dates.appt_date === this.state.date)
+          //map through only the selected input date for rendering
           const dateSearched = searchDates.map((listing, index) => (          
             <div key={index} className="upcomingApptCard">
             <div className="upcomingAppt">
@@ -128,17 +135,16 @@ class UpcomingAppts extends Component {
                </ul>
                </div>
                 <div className="apptCardButtons">
-                <Link to={`/editUpcomingAppt/${listing.id}`} upcoming_appts = {this.state.upcoming_appts}><button type="submit" className="upApptEdit">
+                <button onClick={this.handleAlert} className="upApptEdit">
                 Edit
                 </button>
-                </Link>
                 </div>
           
           </div>
           )
-        )
-        const dateSearch = dateSearched.length >= 1 ?
-        dateSearched : "No appointments on this date";
+          )
+          const dateSearch = dateSearched.length >= 1 ?
+          dateSearched : "No appointments on this date";
 
   return (
      <div className="myUpcomingAppts">
@@ -164,7 +170,6 @@ class UpcomingAppts extends Component {
              value={this.state.date}
              onChange={this.handleChangeDate}
               ></input>
-             {/* <button className="findButton" type="submit">Clear Date</button> */}
          </form>
             }
 
@@ -184,11 +189,11 @@ class UpcomingAppts extends Component {
             }
           </div>
          
-         <Link to='/addAppt' className="addApptLink">+ Add New Appointment</Link>
+         <button onClick={this.handleAlert} className="addApptLink">+ Add New Appointment</button>
 
       </div>
  
     );
   }
 }
-export default UpcomingAppts;
+export default UpcomingApptsDemo;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import config from '../config'
 import TokenService from '../services/token-service'
+import moment from 'moment'
 import './editUpcomingAppt.css'
 
 class EditUpcomingAppt extends Component {
@@ -118,7 +119,7 @@ class EditUpcomingAppt extends Component {
 
       const editUpcomingAppt = this.state.upcomingAppts.map((listing, index) => (
         <ul key={index} className="appt_date">
-                <li>{(new Date(listing.appt_date).toLocaleDateString("en-US", {timeZone: 'America/Phoenix'}))}</li>
+                <li>{(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}</li>
              </ul>
       ))
 
