@@ -68,12 +68,7 @@ class PastApptsDemo extends Component {
                 upcoming_appt: false            
             }
         ]
-        
-        // const apptState = this.state.past_appts;
-        // const sortedByDate = apptState.sort((a, b) => new Date(...a.appt_date.split('/').reverse())
-        // - new Date(...b.appt_date.split('/').reverse()));
-        // const pastAppts = sortedByDate
-        // .filter((appt) => appt.upcoming_appt === false)
+
         const searchDates = pastAppts
         .filter((dates) => dates.appt_date === this.state.date)
 
@@ -114,9 +109,9 @@ class PastApptsDemo extends Component {
             </thead>
             <tbody>
             <tr>
-            <td>$ {listing.copay}</td>
-            <td>$ {listing.doc_bill}</td>
-            <td>$ {listing.insurance_bill}</td>
+            <td>{listing.copay}</td>
+            <td>{listing.doc_bill}</td>
+            <td>{listing.insurance_bill}</td>
             
             </tr>
             </tbody>
@@ -167,9 +162,9 @@ class PastApptsDemo extends Component {
               </thead>
               <tbody>
             <tr>
-            <td>${listing.copay}</td>
-            <td>${listing.doc_bill}</td>
-            <td>${listing.insurance_bill}</td>
+            <td>{listing.copay}</td>
+            <td>{listing.doc_bill}</td>
+            <td>{listing.insurance_bill}</td>
             
             </tr>
               </tbody>
