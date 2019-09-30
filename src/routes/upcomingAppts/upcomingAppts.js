@@ -156,9 +156,10 @@ class UpcomingAppts extends Component {
               this.state.showAppts ?
               null
               :
-              <form role="search">
+              <form role="search" className="inputDate">
              <label htmlFor="date-search">Search By Date</label>
              <input 
+             className="inputDate"
              name="date"
              type="date"
              value={this.state.date}

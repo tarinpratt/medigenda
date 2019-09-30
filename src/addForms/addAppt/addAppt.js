@@ -110,7 +110,8 @@ class AddAppt extends Component {
                  <input 
                  name='appt_notes'
                  type='text'
-                 id='addApptForm_apptNotes'>
+                 id='addApptForm_apptNotes'
+                 required> 
                  </input>
              </label>
          </div>

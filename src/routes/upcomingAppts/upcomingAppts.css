@@ -1,5 +1,16 @@
 .myUpcomingAppts{
-    width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-top: 10px;
+background-image: url(../../images/pills.jpg); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 10px;
+  padding-bottom: 300px;
+
 }
 .apptCardInfo {
     display: flex;
@@ -7,15 +18,19 @@
     text-align: center;
 }
 
-/* .apptCard {
+.searchedAppts {
+    margin-top: 10px;
+    background-color: rgb(237, 247, 218);
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
     border-radius: 5px;
-    border: 1px solid black;
-} */
-
+    
+}
 .upcomingApptCard {
     border-radius: 5px;
     margin-bottom: 10px;
-    background-color: rgb(237, 247, 218)
+    background-color: rgb(172, 202, 128)
 }
 
 .upcomingAppt {
@@ -24,12 +39,12 @@
     height: 125px;
 }
 .apptCardListing {
+    width: 100px;
     padding-left: 10px;
     text-align: left;
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-start; */
 }
 
 
@@ -41,6 +56,11 @@
     padding-top: 0px;
 }
 
+.apptCard {
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 .apptCardButtonsList {
     width: 75px;
@@ -48,10 +68,10 @@
 }
 
 .addApptLink {
-    border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
     margin: 10px;
+    background-color: rgb(185, 185, 243);
 }
 
 .addApptLink:hover {
@@ -105,3 +125,96 @@
 .upApptEdit:hover {
     cursor: pointer;
 }
+
+.inputDate {
+    margin-right: auto;
+    margin-left: auto;
+    height: 30px;
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 700px)
+
+  {
+       .myUpcomingApptsHeader {
+          width: 500px;
+          margin-right: auto;
+          margin-left: auto;
+      }
+      .myUpcomingAppts {
+          width: 100%;
+      }
+      .viewAllButton {
+          height: 50px;
+          margin-right: auto;
+          margin-left: auto;
+      }
+
+      div.upcomingApptCard {
+            width: 500px;
+            margin-right: auto;
+            margin-left: auto;
+
+       }  
+
+  }
+
+  @media only screen and (min-width: 800px) {
+      .myUpcomingAppts {
+          width: 100%;
+          margin-right: auto;
+          margin-left: auto;
+      }
+      .myUpcomingApptsHeader {
+        margin-right: auto;
+        margin-left: auto;
+
+      }
+      .upcomingApptCard {
+        margin-right: auto;
+        margin-left: auto;
+
+      }
+      /* div.apptCard {
+          width: 500px;
+          margin-right: auto;
+          margin-left: auto;
+      } */
+
+  }
+
+  @media only screen and (min-width: 1000px) {
+      /* .myUpcomingAppts {
+          margin-left: 10px;
+      } */
+      .apptCardInfo {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+      }
+      .myUpcomingApptsHeader {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .viewAllButton {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .apptCardInfo {
+        width: 1000px;
+    }
+    .apptCard {
+        width: 1000px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    div.upcomingApptCard {
+        width: 400px;
+   }  
+
+  }
+
+ 

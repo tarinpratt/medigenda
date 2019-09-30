@@ -1,28 +1,138 @@
-
+.medLog_page {
+  background-image: url(../../images/pills.jpg); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 10px;
+  padding-bottom: 300px;
+}
+table {
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    border-collapse: collapse;
+}
 th {
+    height: 30px;
     margin: 0px;
     padding-right: 5px;
     padding-left: 0px;
     border-bottom: 2px black solid;
+    background-color: rgb(238, 238, 148);
    
 }
-th:hover {
-    cursor: pointer;
-    color: green;
-}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+  }
+
+
+/* tr:hover {
+    background: rgb(237, 247, 218);
+
+} */
 
 td {
     margin: 0px;
-    padding: 0px;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
+    padding: 5px;
 }
 
 .myMeds {
     text-align: center;
     
 }
+tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  tr:nth-of-type(even) { 
+    background: #eee; 
+  }
+
+  tr:hover { 
+    background: rgb(218, 235, 188); 
+  }
 
 
+@media only screen and (max-width: 600px)
+  {
 
+
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { 
+        border: 1px solid #ccc; 
+    }
+	
+	td { 
+
+		border: none;
+		border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 150px;
+
+	}
+	
+	td:before { 
+
+		position: absolute;
+
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+    }
+    
+    td:nth-of-type(1):before { 
+        content: "Date";
+        font-weight: bold;
+     }
+	td:nth-of-type(2):before {
+         content: "Time";
+         font-weight: bold;
+
+        }
+	td:nth-of-type(3):before {
+         content: "Medication";
+         font-weight: bold;
+         }
+	td:nth-of-type(4):before {
+         content: "Amount";
+         font-weight: bold;
+         }
+	td:nth-of-type(5):before {
+         content: "Reason For Intake"; 
+         font-weight: bold;
+        }
+
+
+}
+
+@media only screen and (min-width: 800px)
+  {
+    table {
+      width: 600px;
+    }
+      tr.medlogtr {
+    height: 40px;
+  }
+
+  }
+
+  @media only screen and (min-width: 1100px)
+  {
+    table {
+      width: 900px;
+    }
+
+  }

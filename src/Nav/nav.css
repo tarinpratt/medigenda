@@ -1,6 +1,6 @@
 nav {
     text-align: left;
-    width: 380px;
+    width: 100%;
    
 }
 
@@ -23,7 +23,7 @@ nav {
 
 .pastAppts {
     text-align: center;
-    background: rgb(155, 192, 80);
+    background: rgb(155, 167, 133);
     padding: 5px;
     font-weight: bolder;
     display: block;
@@ -43,3 +43,16 @@ nav {
     cursor: pointer;
     color: blue;
 }
+
+@media only screen and (min-width: 600px)
+  {
+      nav {
+          display: flex;
+          flex-direction: row;
+      }
+       
+      .upcomingAppts, .medLog, .pastAppts {
+          width: 100%;
+          padding: 20px;
+      }
+  }

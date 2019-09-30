@@ -4,10 +4,16 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: 380px;
-    height: 300px;
+    width: 100%;
+    height: 600px;
     margin: 0px;
 
+}
+
+.registerInputs {
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
 }
 input {
     margin-left: 5px;
@@ -24,7 +30,7 @@ input {
     width: 129px;
 }
 
-.userName, .email, .password {
+.userName, .email, .registrationPassword {
     text-align: left;
     padding-left: 25%;
 

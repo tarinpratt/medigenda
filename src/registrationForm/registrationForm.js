@@ -49,6 +49,7 @@ class RegistrationForm extends Component {
          <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
+        <section className="registerInputs">
          <div className='userName'>
              <label htmlFor='registrationForm_userName'>
                  Username 
@@ -71,7 +72,7 @@ class RegistrationForm extends Component {
                  </input>
              </label>
          </div>
-         <div className='password'>
+         <div className='registrationPassword'>
              <label htmlFor='registrationForm_password'>
                  Password 
                  <input 
@@ -85,6 +86,7 @@ class RegistrationForm extends Component {
          <button type='submit'>
              Sign Up
          </button>
+         </section>
         
      </form>
   );

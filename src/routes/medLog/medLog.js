@@ -54,12 +54,12 @@ tConvert (time) {
 
     const medList = sortedByDate.map((listing, index) => (
       
-      <tr key={index}>
-      <td>{(moment(new Date(listing.date)).add(1, 'day').format('MM/DD'))}</td>
-      <td>{this.tConvert(listing.time)}</td>
-      <td>{listing.medname}</td>
-      <td>{listing.amounttaken}</td>
-      <td>{listing.reason}</td>
+      <tr key={index} className="medlogtr">
+      <td className="medlogtd">{(moment(new Date(listing.date)).add(1, 'day').format('MM/DD'))}</td>
+      <td className="medlogtd">{this.tConvert(listing.time)}</td>
+      <td className="medlogtd">{listing.medname}</td>
+      <td className="medlogtd">{listing.amounttaken}</td>
+      <td className="medlogtd">{listing.reason}</td>
       </tr>
   
     )
@@ -69,9 +69,10 @@ tConvert (time) {
   return (
       <div className="medLog_page">
           <h1 className="myMeds">My Medications</h1>
-          <table>
-              <thead>
-              <tr>
+          
+          <table className="medlogtable">
+              <thead className="medloghead">
+              <tr className="medlogtr">
               <th onClick={e => this.onSort(e, 'date')} className="date">Date</th>
               <th onClick={e => this.onSort(e, 'time')}className="time">Time</th>
               <th onClick={e => this.onSort(e, 'medname')}className="medName">Medication</th>
@@ -79,10 +80,11 @@ tConvert (time) {
               <th onClick={e => this.onSort(e, 'reason')}className="reason">Reason For Intake</th>
               </tr>
               </thead>
-              <tbody>
+              <tbody className="medlogtbody">
                 {medList}
               </tbody>
           </table>
+          
          <Link to='/addMed' className="addMedLink"><button type='submit'>
              + Add New Entry
          </button></Link>

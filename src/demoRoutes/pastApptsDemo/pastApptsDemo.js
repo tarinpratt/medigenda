@@ -98,24 +98,18 @@ class PastApptsDemo extends Component {
             </li>
         </ul>
         </div>
-        <table className="pastApptBillingCard">
-            <thead>
-            <tr>
-            <th className="copay">Co-pay</th>
-            <th className="docBill">Bill From Doctor</th>
-            <th className="insuranceBill">Insurance says I owe</th>
-            
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-            <td>{listing.copay}</td>
-            <td>{listing.doc_bill}</td>
-            <td>{listing.insurance_bill}</td>
-            
-            </tr>
-            </tbody>
-        </table>
+        <section className="pastApptBillingCard">
+            <div className="headings">
+            <h4 className="copay">Co-pay</h4>
+            <h4 className="docBill">Bill From Doctor</h4>
+            <h4 className="insuranceBill">Insurance says I owe</h4>
+            </div>
+            </section>
+            <ul className="billing">
+            <li className="billingPrice">{listing.copay}</li>
+            <li className="billingPrice">{listing.doc_bill}</li>
+            <li className="billingPrice">{listing.insurance_bill}</li>
+            </ul>
         <div className="pastApptCardButtons">
             <button onClick={this.handleAlert} className="pastApptCardButtonsList" type="submit">
                 Edit
@@ -151,24 +145,18 @@ class PastApptsDemo extends Component {
             </li>
         </ul>
         </div>
-        <table className="pastApptBillingCard">
-              <thead>
-              <tr>
-              <th className="copay">Co-pay</th>
-              <th className="docBill">Bill From Doctor</th>
-              <th className="insuranceBill">Insurance says I owe</th>
-              
-              </tr>
-              </thead>
-              <tbody>
-            <tr>
-            <td>{listing.copay}</td>
-            <td>{listing.doc_bill}</td>
-            <td>{listing.insurance_bill}</td>
-            
-            </tr>
-              </tbody>
-          </table>
+        <section className="pastApptBillingCard">
+            <div className="headings">
+            <h4 className="copay">Co-pay</h4>
+            <h4 className="docBill">Bill From Doctor</h4>
+            <h4 className="insuranceBill">Insurance says I owe</h4>
+            </div>
+            </section>
+            <ul className="billing">
+            <li className="billingPrice">{listing.copay}</li>
+            <li className="billingPrice">{listing.doc_bill}</li>
+            <li className="billingPrice">{listing.insurance_bill}</li>
+            </ul>
           <div className="pastApptCardButtons">
              <button onClick={this.handleAlert} className="pastApptCardButtonsList" type="submit">
                  Edit
@@ -195,9 +183,10 @@ class PastApptsDemo extends Component {
             {
                 this.state.showAppts ?
                 null
-                : <form role="search">
+                : <form role="search" >
                 <label htmlFor="date-search">Search By Date</label>
                 <input 
+                className="inputDate"
                 name="date"
                 type="date"
                 value={this.state.date} 

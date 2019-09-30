@@ -40,6 +40,7 @@ class LoginForm extends Component {
          <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
+        <section className="loginInputs">
          <div className='username'>
              <label htmlFor='loginForm_username'>
                  Username 
@@ -65,6 +66,7 @@ class LoginForm extends Component {
          <Button type='submit'>
              Log In
          </Button>
+         </section>
         
      </form>
   );
