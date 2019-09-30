@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import { faNotesMedical, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import UpcomingApptsApiService from './../../services/upcoming_appts-api-service';
 import './addAppt.css';
 
@@ -7,7 +9,8 @@ class AddAppt extends Component {
        constructor(props) {
         super(props);
         this.state = {
-            apptEntries: []
+            apptEntries: [],
+            appt_notes: ''
         };
     }
     
@@ -17,6 +20,10 @@ class AddAppt extends Component {
         insurance_bill: '0',
         upcoming_appt: true
       }
+
+      handleChangeNotes = e => {
+        this.setState({ appt_notes: e.target.value })
+      }; 
 
       handleSubmit = ev => {
         ev.preventDefault()
@@ -46,9 +53,11 @@ class AddAppt extends Component {
     render() {
         console.log(this.state.apptEntries)
         
+        
   return (
      <form id='addApptForm' onSubmit={this.handleSubmit}>
          <h3>Add My Appointment</h3>
+         <section className="addAppt">
          <div className='apptDate'>
              <label htmlFor='addApptForm_apptDate'>
                  Date 
@@ -96,30 +105,36 @@ class AddAppt extends Component {
          <div className='purposeForVisit'>
              <label htmlFor='addApptForm_purposeForVisit'>
                  Purpose For Visit
-                 <input 
+                 <textarea 
+                 wrap="soft"
                  name='appt_purpose'
                  type='text'
                  required
                  id='addApptForm_purposeForVisit'>
-                 </input>
+                 </textarea>
              </label>
          </div>
          <div className='apptNotes'>
              <label htmlFor='addApptForm_apptNotes'>
                  Additional Notes
-                 <input 
+                 <textarea 
+                 wrap="soft"
                  name='appt_notes'
                  type='text'
                  id='addApptForm_apptNotes'
-                 required> 
-                 </input>
+                //  value={this.state.appt_notes}
+                //  onChange={this.handleChangeNotes}
+                 > 
+                 </textarea>
              </label>
          </div>
-        
-         <button className="addApptButtons" type='submit'>
-             Submit
+         <section className="submitApptButtons">
+         <Link to='/upcomingAppts'><button className="addApptButtons" type="submit"><span><FontAwesomeIcon icon={faArrowLeft} className="addNote" /></span>Back</button></Link>
+         <button className="addApptButtons" type='submit'><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>Submit
          </button>
-         <Link to='/upcomingAppts'><button className="addApptButtons" type="submit">Back</button></Link>
+         </section>
+         </section>
+         
         
      </form>
   );

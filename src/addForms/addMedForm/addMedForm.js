@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import './addMedForm.css';
 import MedLogApiService from './../../services/medlog-api-service';
+import { faPrescription, faNotesMedical } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class AddMedForm extends Component {
     constructor(props) {
@@ -31,7 +33,8 @@ class AddMedForm extends Component {
       
   return (
      <form id='addMedForm' onSubmit={this.handleSubmit}>
-         <h3>New Entry</h3>
+         <h3>New Medication Entry <span><FontAwesomeIcon icon={faPrescription} size="2x" className="rx" /></span></h3>
+         
          <div className='medDate'>
              <label htmlFor='addMedForm_medDate'>
                  Date 
@@ -90,10 +93,10 @@ class AddMedForm extends Component {
                  </input>
              </label>
          </div>
-         <button type='submit'>
+         <Link to='/medlog'><button className="addApptButtons" type="submit">Back</button></Link>
+         <button type='submit'><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>
              Add Entry
          </button>
-         <Link to='/medlog'><button className="addApptButtons" type="submit">Back</button></Link>
         
      </form>
   );

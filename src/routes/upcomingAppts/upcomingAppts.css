@@ -1,15 +1,15 @@
 .myUpcomingAppts{
-    margin-left: auto;
+    /* margin-left: auto;
     margin-right: auto;
     width: 100%;
     padding-top: 10px;
-background-image: url(../../images/pills.jpg); 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 10px;
-  padding-bottom: 300px;
+    background-image: url(../../images/pills.jpg); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 10px;
+    padding-bottom: 300px; */
 
 }
 .apptCardInfo {
@@ -21,7 +21,7 @@ background-image: url(../../images/pills.jpg);
 .searchedAppts {
     margin-top: 10px;
     background-color: rgb(237, 247, 218);
-    width: 300px;
+    width: 250px;
     margin-right: auto;
     margin-left: auto;
     border-radius: 5px;
@@ -83,17 +83,6 @@ background-image: url(../../images/pills.jpg);
     width: 75px;
 }
 
-.dropNoteContent {
-    margin-left: 30px;
-    width: 160px;
-    text-align: center;
-
-}
-
-.dropNoteContent ul {
-    padding: 5px;
-    text-align: left;
-}
 
 .apptDate, .apptTime, .apptDoctor, .apptLocation, .apptPurpose {
     width: 150px;
@@ -120,6 +109,7 @@ background-image: url(../../images/pills.jpg);
 
 .upApptEdit {
     width: 100px;
+    margin-bottom: 5px;
 }
 
 .upApptEdit:hover {
@@ -146,17 +136,19 @@ background-image: url(../../images/pills.jpg);
           width: 100%;
       }
       .viewAllButton {
-          height: 50px;
           margin-right: auto;
           margin-left: auto;
       }
 
       div.upcomingApptCard {
-            width: 500px;
+            width: 300px;
             margin-right: auto;
             margin-left: auto;
-
        }  
+
+       .apptCardInfo {
+           width: 300px;
+       }
 
   }
 
@@ -176,18 +168,11 @@ background-image: url(../../images/pills.jpg);
         margin-left: auto;
 
       }
-      /* div.apptCard {
-          width: 500px;
-          margin-right: auto;
-          margin-left: auto;
-      } */
 
   }
 
   @media only screen and (min-width: 1000px) {
-      /* .myUpcomingAppts {
-          margin-left: 10px;
-      } */
+
       .apptCardInfo {
           display: flex;
           flex-wrap: wrap;

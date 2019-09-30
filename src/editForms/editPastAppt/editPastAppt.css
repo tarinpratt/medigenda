@@ -1,0 +1,73 @@
+#editPastApptForm {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(238, 238, 213);
+    padding-top: 10px;
+    padding-bottom: 100%; 
+}
+
+.editBilling {
+    display: flex; 
+    flex-direction: column;
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#editPastApptForm_copay, #editPastApptForm_docBill, #editPastApptForm_insuranceBill {
+    width: 45px;
+} 
+
+#editPastApptForm_apptNotes {
+    height: 75px;
+}
+
+textarea {
+    display: block;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.editPastApptButton {
+    display: inline-block;
+    /* margin-right: auto;
+    margin-left: auto; */
+    width: 100px;
+}
+.editPastApptDate {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.editPastApptDate:hover {
+    cursor: pointer;
+}
+
+.editApptCardListing {
+    padding: 10px;
+    background-color: rgb(155, 167, 133);
+    border-radius: 5px;
+    list-style-type: none;
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;    
+}
+
+@media only screen and (min-width: 400px) {
+    .editBilling {
+        text-align: center;
+    }
+    .editCopay, .editDocBill, .insuranceBill, .editApptNotes {
+        padding: 3px;
+    }
+    textarea {
+        width: 300px;
+    }
+    .editPastApptButton {
+        margin-right: auto;
+        margin-left: auto;   
+    }
+    h4.apptDate {
+        width: 100px;
+
+    }
+}

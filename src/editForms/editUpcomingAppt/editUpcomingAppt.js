@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import config from '../../config'
 import TokenService from '../../services/token-service'
 import moment from 'moment'
+import { faNotesMedical } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './editUpcomingAppt.css'
 
 class EditUpcomingAppt extends Component {
@@ -170,7 +172,7 @@ class EditUpcomingAppt extends Component {
                  type='text'
                  value={this.state.appt_location}
                  onChange={this.handleChangeApptLocation}
-                 id='editPastApptForm_apptLocation'>
+                 id='editApptForm_apptLocation'>
                  </input>
              </label>
          </div>
@@ -182,20 +184,21 @@ class EditUpcomingAppt extends Component {
                  type='text'
                  value={this.state.appt_purpose}
                  onChange={this.handleChangeApptPurpose}
-                 id='editPastApptForm_apptPurpose'>
+                 id='editApptForm_apptPurpose'>
                  </input>
              </label>
          </div>
          <div className='editApptNotes'>
              <label htmlFor='editPastApptForm_apptNotes'>
                  Other Notes
-                 <input 
+                 <textarea 
+                 wrap="soft"
                  name='appt_notes'
                  type='text'
                  value={this.state.appt_notes}
                  onChange={this.handleChangeApptNotes}
-                 id='editPastApptForm_apptNotes'>
-                 </input>
+                 id='editApptForm_apptNotes'>
+                 </textarea>
              </label>
          </div>
          <div className='editUpcomingAppt'>
@@ -220,7 +223,7 @@ class EditUpcomingAppt extends Component {
                 Yes
             </label>
          </div>
-         <button type='submit'>
+         <button type='submit'><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>
              Save
          </button>
          {/* <button className="apptCardButtonsList" >

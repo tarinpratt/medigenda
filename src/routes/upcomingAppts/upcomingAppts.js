@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import moment from 'moment'
+import { faNotesMedical, faTimes, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import UpcomingApptsApiService from'../../services/upcoming_appts-api-service'
 import './upcomingAppts.css';
 
@@ -146,9 +148,9 @@ class UpcomingAppts extends Component {
 
             {
               this.state.showAppts ?
-            <button className="viewAllButton" onClick={()=>this.renderAppts()}>Close Appointment List
+            <button className="viewAllButton" onClick={()=>this.renderAppts()}><span><FontAwesomeIcon icon={faTimes} size="1x" className="addNote" /></span>Close Appointment List
             </button>
-            : <button className="viewAllButton" onClick={()=>this.renderAppts()}>View All Appointments
+            : <button className="viewAllButton" onClick={()=>this.renderAppts()}><span><FontAwesomeIcon icon={faArrowDown} size="1x" className="addNote" /></span>View All Appointments
             </button>
             }
 
@@ -185,7 +187,7 @@ class UpcomingAppts extends Component {
             }
           </div>
          
-         <Link to='/addAppt' className="addApptLink">+ Add New Appointment</Link>
+         <Link to='/addAppt' className="addApptLink"><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>Add New Appointment</Link>
 
       </div>
  

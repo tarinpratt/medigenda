@@ -1,6 +1,9 @@
 #addApptForm {
     padding-left: 15px;
     text-align: left;
+    background-color: rgb(238, 238, 213);
+    padding-top: 12px;
+    padding-bottom: 100%;
 }
 
 #addApptForm_apptDate {
@@ -18,16 +21,39 @@
     width: 200px;
 }
 
-#addApptForm_purposeForVisit {
-    height: 40px;
-}
-
-#addApptForm_apptNotes {
-    height: 75px;
-    width: 130px;
-}
 
 .addApptButtons {
-    width: 100px;
     margin-right: 25px;
+}
+
+@media only screen and (min-width: 400px) {
+    .purposeForVisit, .apptNotes {
+        text-align: center;
+    }
+    .apptDate, .apptTime, .apptLocation, .apptDoctor {
+        width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+   #addApptForm_purposeForVisit {
+        display: block;
+    }
+    input#addApptForm_purposeForVisit {
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+    .submitApptButtons {
+        width: 375px;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+    .addApptButtons {
+        margin-right: auto;
+        margin-left: auto;
+        
+        
+    }
+
 }

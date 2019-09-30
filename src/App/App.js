@@ -45,8 +45,9 @@ class App extends Component {
       <PrivateRoute path='/editPastAppt/:upcomingApptId' component={EditPastAppt} />
       <PrivateRoute path='/editUpcomingAppt/:upcomingApptId' component={EditUpcomingAppt} />
       
-
+      
     </main>
+    
   );
 }
 }

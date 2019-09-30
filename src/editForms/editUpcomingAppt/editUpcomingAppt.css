@@ -1,3 +1,63 @@
 .appt_date {
     display: inline;
+    list-style-type: none;
+}
+
+#editUpcomingApptForm {
+    text-align: left;
+    padding-left: 15px;
+    background-color: rgb(238, 238, 213);
+    padding-top: 10px;
+    padding-bottom: 100%;
+}
+h3 {
+text-align: center;
+
+}
+
+.editApptDoctor, .editApptLocation, .editApptPurpose, .editApptNotes {
+    width: 300px;
+}
+#editApptForm_apptLocation {
+    width: 170px;
+}
+#editApptForm_appt_doctor {
+    width: 183px;
+}
+#editApptForm_apptPurpose {
+    width: 175px;
+}
+label {
+    margin-top: 3px;
+    font-weight: bold;
+}
+#editApptForm_apptNotes {
+    display: block;
+    height: 50px;
+    width: 180px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.editUpcomingAppt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+input[type=radio] {
+    border: 0px;
+    width: 20px;
+    height: 15px;
+}
+
+input[type=radio]:hover {
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 400px) {
+    #editUpcomingApptForm {
+        text-align: center;
+    }
+    .editApptDoctor, .editApptLocation, .editApptPurpose, .editApptNotes, textarea {
+        margin-right: auto;
+        margin-left: auto;
+    }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import UpcomingApptsApiService from'../../services/upcoming_appts-api-service'
 import { Link } from 'react-router-dom'
+import { faNotesMedical, faTimes, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from 'moment'
 import './pastAppts.css';
 
@@ -169,16 +171,16 @@ class PastAppts extends Component {
          <h1 className="myPastApptsHeader"> My Past Appointments</h1>
             {
               this.state.showAppts ?
-            <button className="viewAllButton" onClick={()=>this.renderAppts()}>Close Appointment List
+            <button className="viewAllButton" onClick={()=>this.renderAppts()}><span><FontAwesomeIcon icon={faTimes} size="1x" className="addNote" /></span>Close Appointment List
             </button>
-            : <button className="viewAllButton" onClick={()=>this.renderAppts()}>View All Appointments
+            : <button className="viewAllButton" onClick={()=>this.renderAppts()}><span><FontAwesomeIcon icon={faArrowDown} size="1x" className="addNote" /></span>View All Appointments
             </button>
             }
 
             {
                 this.state.showAppts ?
                 null
-                : <form role="search">
+                : <form role="search" className="pastApptDateSearch">
                 <label htmlFor="date-search">Search By Date</label>
                 <input 
                 className="inputDate"
@@ -191,7 +193,7 @@ class PastAppts extends Component {
             </form>
             }   
 
-            <div className="pastApptCard">
+            <div className="searchedAppts">
              {
                  !this.state.showAppts ?
                  dateSearch 

@@ -1,7 +1,22 @@
 p {
     display: block;
-    /* width: 300px; */
     text-align: left;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+@media only screen and (min-width: 600px) {
+    p {
+        width: 550px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    p {
+        text-align: center;
+        padding: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 20px;
+    }
 }

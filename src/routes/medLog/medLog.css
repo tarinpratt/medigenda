@@ -1,11 +1,11 @@
 .medLog_page {
-  background-image: url(../../images/pills.jpg); 
-  -webkit-background-size: cover;
+  /* background-image: url(../../images/pills.jpg);  */
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   padding-top: 10px;
-  padding-bottom: 300px;
+  padding-bottom: 300px; */
 }
 table {
     width: 300px;

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { faNotesMedical } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 
@@ -95,8 +97,8 @@ class MedLogDemo extends Component {
                 {medList}
               </tbody>
           </table>
-         <button onClick={this.handleAlert} className="addMedLink">
-             + Add New Entry
+         <button onClick={this.handleAlert} className="addMedLink"><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>
+             Add New Entry
          </button>
 
       </div>

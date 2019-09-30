@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MedLogApiService from'../../services/medlog-api-service'
 import moment from 'moment'
+import { faNotesMedical } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom'
 import './medLog.css';
 
@@ -85,8 +87,8 @@ tConvert (time) {
               </tbody>
           </table>
           
-         <Link to='/addMed' className="addMedLink"><button type='submit'>
-             + Add New Entry
+         <Link to='/addMed' className="addMedLink"><button type='submit'><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>
+             Add New Entry
          </button></Link>
 
       </div>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment'
+import { faNotesMedical, faTimes, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class UpcomingApptsDemo extends Component {
     constructor(props) {
@@ -152,9 +154,9 @@ class UpcomingApptsDemo extends Component {
 
             {
               this.state.showAppts ?
-            <button className="viewAllButton" onClick={()=>this.renderAppts()}>Close Appointment List
+            <button className="viewAllButton" onClick={()=>this.renderAppts()}><span><FontAwesomeIcon icon={faTimes} size="1x" className="addNote" /></span>Close Appointment List
             </button>
-            : <button className="viewAllButton" onClick={()=>this.renderAppts()}>View All Appointments
+            : <button className="viewAllButton" onClick={()=>this.renderAppts()}><span><FontAwesomeIcon icon={faArrowDown} size="1x" className="addNote" /></span>View All Appointments
             </button>
             }
 
@@ -190,7 +192,7 @@ class UpcomingApptsDemo extends Component {
             }
           </div>
          
-         <button onClick={this.handleAlert} className="addApptLink">+ Add New Appointment</button>
+         <button onClick={this.handleAlert} className="addApptLink"><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>Add New Appointment</button>
 
       </div>
  

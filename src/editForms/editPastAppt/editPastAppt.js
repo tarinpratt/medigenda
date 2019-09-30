@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import config from '../../config'
 import TokenService from '../../services/token-service'
+import { faTrashAlt, faSave } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from 'moment'
-import './editPastAppt'
+import './editPastAppt.css'
 
 class EditPastAppt extends Component {
     constructor(props) {
@@ -13,7 +15,9 @@ class EditPastAppt extends Component {
           doc_bill: '',
           insurance_bill: '',
           appt_notes: '',
+          showAppt: false
         };
+        this.renderAppts = this.renderAppts.bind(this)
         this.tConvert = this.tConvert.bind(this);
     }
 
@@ -130,6 +134,12 @@ class EditPastAppt extends Component {
     }
     return time.join (''); // return adjusted time or original string
   }
+  renderAppts() {
+    this.setState({
+      showAppt: !this.state.showAppt
+    })
+  }
+
 
 
 
@@ -139,11 +149,17 @@ class EditPastAppt extends Component {
 
 
     render() {
-      const editPastAppt = this.state.pastAppts.map((listing, index) => (
-        <ul key={index} className="apptCardListing">
-        <li onClick={e => this.onSort(e, 'appt_date')}className="apptDate">
+      const pastApptDate = this.state.pastAppts.map((listing, index) => (
+        <h4 key={index} className="apptDate">
                 {(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}
-             </li>
+             </h4>
+      ))
+
+      const fullPastAppt = this.state.pastAppts.map((listing, index) => (
+        <ul key={index} className="editApptCardListing">
+        {/* <li className="apptDate">
+                {(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}
+             </li> */}
              <li className="apptTime">
                  {this.tConvert(listing.appt_time)}
              </li>
@@ -168,7 +184,12 @@ class EditPastAppt extends Component {
             <div className='EditBookmark__error' role='alert'>
             {error && <p>{error.message}</p>}
             </div>
-            {editPastAppt}
+            <section className="editPastApptDate" onClick={this.renderAppts}>{pastApptDate}</section>
+            { this.state.showAppt ?
+            fullPastAppt
+            : null
+            }
+            <section className="editBilling">
          <div className='editCopay'>
              <label htmlFor='editPastApptForm_copay'>
                  Copay
@@ -208,21 +229,23 @@ class EditPastAppt extends Component {
          <div className='editApptNotes'>
              <label htmlFor='editPastApptForm_apptNotes'>
                  Other Notes
-                 <input 
+                 <textarea 
+                 wrap="soft"
                  name='appt_notes'
                  type='text'
                  value={this.state.appt_notes}
                  onChange={this.handleChangeOtherNotes}
                  id='editPastApptForm_apptNotes'>
-                 </input>
+                 </textarea>
              </label>
          </div>
-         <button type='submit' onClick={this.handleSubmit}>
+         <button type='submit' onClick={this.handleSubmit} className="editPastApptButton"><span><FontAwesomeIcon icon={faSave} size="1x" className="addNote" /></span>
              Save
          </button>
-         <button type='submit' onClick={this.handleDelete}>
+         <button type='submit' onClick={this.handleDelete} className="editPastApptButton"><span><FontAwesomeIcon icon={faTrashAlt} size="1x" className="addNote" /></span>
              Delete
          </button>
+         </section>
      </form>
       
         )

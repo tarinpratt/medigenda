@@ -1,4 +1,28 @@
 #addMedForm {
+    padding-top: 10px;
     padding-left: 15px;
     text-align: left;
+    height: 700px;
+    background-color: rgb(238, 238, 213);
+    padding-bottom: 100%;
+}
+
+.addApptButtons {
+    width: 100px;
+}
+
+.rx {
+    padding-left: 20px;
+}
+
+.addNote {
+    padding-right: 5px;
+}
+
+@media only screen and (min-width: 450px) {
+    #addMedForm {
+        width: 100%;
+        text-align: center;
+
+    }
 }

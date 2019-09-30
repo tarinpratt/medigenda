@@ -5,7 +5,7 @@
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 600px;
+    padding-bottom: 500px;
     margin: 0px;
 
 }
@@ -49,4 +49,19 @@ button:hover {
 
 .red {
     color: red;
+}
+
+@media only screen and (max-width: 500px) {
+
+#registrationForm {
+    margin-top: 50px;
+    background-image: url(../images/greenPills.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    margin: 0px;
+
+    }
 }

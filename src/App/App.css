@@ -10,7 +10,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 500px;
+  /* height: 500px; */
+  padding-bottom: 700px;
   margin: 0px;
 }
 
@@ -21,6 +22,26 @@ button {
 
 }
 
+@media only screen and (max-width: 500px) {
+.backgroundImage {
+  background-image: url(../images/greenPills.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  margin: 0px;
+  }
+}
+
+/* footer {
+  padding-bottom: 100%;
+  background-image: url(../images/01_green_marble.jpg); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+} */
 
 
 
