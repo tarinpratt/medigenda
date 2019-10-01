@@ -115,9 +115,18 @@ h4.docBill {
     .searchedPastAppts {
         font-size: 12px;
     }
+    .searchedAppts {
+        width: 220px;
+    }
     .pastApptCard {
-        width: 250px;
+        width: 220px;
         height: 230px;
+    }
+    h4.copay {
+        padding-right: 10px;
+    }
+    h4.insuranceBill {
+        padding-right: 10px;
     }
 }
 
