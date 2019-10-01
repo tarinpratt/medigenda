@@ -167,7 +167,6 @@ class UpcomingAppts extends Component {
              value={this.state.date}
              onChange={this.handleChangeDate}
               ></input>
-             {/* <button className="findButton" type="submit">Clear Date</button> */}
          </form>
             }
 

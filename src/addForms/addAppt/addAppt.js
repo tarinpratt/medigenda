@@ -9,8 +9,7 @@ class AddAppt extends Component {
        constructor(props) {
         super(props);
         this.state = {
-            apptEntries: [],
-            appt_notes: ''
+            apptEntries: []
         };
     }
     
@@ -20,10 +19,6 @@ class AddAppt extends Component {
         insurance_bill: '0',
         upcoming_appt: true
       }
-
-      handleChangeNotes = e => {
-        this.setState({ appt_notes: e.target.value })
-      }; 
 
       handleSubmit = ev => {
         ev.preventDefault()
@@ -122,8 +117,6 @@ class AddAppt extends Component {
                  name='appt_notes'
                  type='text'
                  id='addApptForm_apptNotes'
-                //  value={this.state.appt_notes}
-                //  onChange={this.handleChangeNotes}
                  > 
                  </textarea>
              </label>
