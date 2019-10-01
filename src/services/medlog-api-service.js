@@ -8,9 +8,7 @@ const MedLogApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
-      .then(res => {
-
-      
+      .then(res => {   
         if(!res.ok)
           {res.json().then(e => Promise.reject(e))}
           return res.json()
@@ -20,19 +18,6 @@ const MedLogApiService = {
         return data
       })
 
-  },
-
-  getEntry(entryId) {
-    return fetch(`${config.API_ENDPOINT}/medlog/${entryId}`, {
-      headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
-      },
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
   },
 
   postEntry(date, time, medname, amounttaken, reason) {
@@ -47,8 +32,7 @@ const MedLogApiService = {
         time,
         medname,
         amounttaken,
-        reason
-       
+        reason      
       }),
     })
       .then(res =>

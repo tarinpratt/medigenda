@@ -29,8 +29,6 @@ textarea {
 }
 .editPastApptButton {
     display: inline-block;
-    /* margin-right: auto;
-    margin-left: auto; */
     width: 100px;
 }
 .editPastApptDate {
@@ -50,6 +48,13 @@ textarea {
     text-align: left;
     margin-right: auto;
     margin-left: auto;    
+}
+
+@media only screen and (max-width: 400px) {
+    #editPastApptForm {
+        font-size: 12px;
+    }
+
 }
 
 @media only screen and (min-width: 400px) {

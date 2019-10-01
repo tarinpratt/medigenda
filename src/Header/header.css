@@ -1,5 +1,3 @@
-
-
 .Header {
     font-size: 10px;
     text-align: left;
@@ -10,8 +8,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-width: 300px;
-    
+    min-width: 300px;    
 }
 
 header {

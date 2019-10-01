@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import config from '../../config'
+import { formatTime } from '../../functionHelpers'
 import TokenService from '../../services/token-service'
 import { faTrashAlt, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,7 +19,6 @@ class EditPastAppt extends Component {
           showAppt: false
         };
         this.renderAppts = this.renderAppts.bind(this)
-        this.tConvert = this.tConvert.bind(this);
     }
 
     componentDidMount() {
@@ -51,7 +51,7 @@ class EditPastAppt extends Component {
         })
     }
 
-    handleChangeCopay = e => {
+      handleChangeCopay = e => {
         this.setState({ copay: e.target.value })
       };
       handleChangeDocBill = e => {
@@ -71,97 +71,75 @@ class EditPastAppt extends Component {
         const updatedAppt = {id, copay, doc_bill, insurance_bill, appt_notes }
 
         fetch(`${config.API_ENDPOINT}/upcoming_appts/${upcomingApptId}`, {
-       method: 'PATCH',
-       body: JSON.stringify(updatedAppt),
-       headers: {
-          'content-type': 'application/json',
-          'authorization': `bearer ${TokenService.getAuthToken()}`
-     }
-  })
-  .then(res => {
-      if(!res.ok)
-          return res.json().then(error => Promise.reject(error))
-  })
-  .then(() => {
-      this.resetFields(updatedAppt)
-      this.props.history.push('/pastAppts')
-  })
-  .catch(error => {
-      console.error(error)
-      this.setState({error})
-  })
-
-    }
-    resetFields = (newFields) => {
-      this.setState({
-        id: newFields.id || '',
-        copay: newFields.copay || '',
-        doc_bill: newFields.doc_bill || '',
-        insurance_bill: newFields.insurance_bill || '',
-        appt_notes: newFields.appt_notes || '',
-      })
-    }
-
-    handleDelete = e =>  {
-      e.preventDefault()
-      const { upcomingApptId } = this.props.match.params
-      fetch(`${config.API_ENDPOINT}/upcoming_appts/${upcomingApptId}`, {
-        method: 'DELETE',
-        headers: {
+          method: 'PATCH',
+          body: JSON.stringify(updatedAppt),
+          headers: {
           'content-type': 'application/json',
           'authorization': `bearer ${TokenService.getAuthToken()}`
         }
       })
-      .then(res => {
-        if (!res.ok) {
-          return res.json().then(error => Promise.reject(error))
-        }
-        this.props.history.push('/pastAppts')
-        //return res.json()
-      })
-      .catch(error => {
-        console.error(error)
-      })
-  }
-
-  tConvert (time) {
-    time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-    if (time.length > 1) { // If time format correct
-      time = time.slice (1); 
-      time = time.slice (0, 3); // Remove full string match value
-      time[5] = +time[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
-      time[0] = +time[0] % 12 || 12; // Adjust hours
+        .then(res => {
+            if(!res.ok)
+                return res.json().then(error => Promise.reject(error))
+        })
+        .then(() => {
+            this.resetFields(updatedAppt)
+            this.props.history.push('/pastAppts')
+        })
+        .catch(error => {
+            console.error(error)
+            this.setState({error})
+        })
     }
-    return time.join (''); // return adjusted time or original string
+        resetFields = (newFields) => {
+          this.setState({
+            id: newFields.id || '',
+            copay: newFields.copay || '',
+            doc_bill: newFields.doc_bill || '',
+            insurance_bill: newFields.insurance_bill || '',
+            appt_notes: newFields.appt_notes || '',
+          })
+    }
+
+        handleDelete = e =>  {
+          e.preventDefault()
+          const { upcomingApptId } = this.props.match.params
+          fetch(`${config.API_ENDPOINT}/upcoming_appts/${upcomingApptId}`, {
+            method: 'DELETE',
+            headers: {
+              'content-type': 'application/json',
+              'authorization': `bearer ${TokenService.getAuthToken()}`
+            }
+          })
+          .then(res => {
+            if (!res.ok) {
+              return res.json().then(error => Promise.reject(error))
+            }
+            this.props.history.push('/pastAppts')
+          })
+          .catch(error => {
+            console.error(error)
+          })
+        }
+
+
+  renderAppts() { 
+    this.setState({ showAppt: !this.state.showAppt })
   }
-  renderAppts() {
-    this.setState({
-      showAppt: !this.state.showAppt
-    })
-  }
-
-
-
-
-    
-
-    
-
 
     render() {
+
       const pastApptDate = this.state.pastAppts.map((listing, index) => (
         <h4 key={index} className="apptDate">
-                {(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}
-             </h4>
-      ))
+            {(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}
+        </h4>
+        )
+      )
 
       const fullPastAppt = this.state.pastAppts.map((listing, index) => (
         <ul key={index} className="editApptCardListing">
-        {/* <li className="apptDate">
-                {(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}
-             </li> */}
              <li className="apptTime">
-                 {this.tConvert(listing.appt_time)}
+                 {formatTime(listing.appt_time)}
              </li>
              <li className="apptLocation">
                  {listing.appt_location}
@@ -176,9 +154,11 @@ class EditPastAppt extends Component {
              {listing.appt_notes}
              </li>
              </ul>
-      ))
+        )
+      )
     
       const { error } = this.state
+
         return (
           <form id='editPastApptForm' onSubmit={this.handleSubmit}>
             <div className='EditBookmark__error' role='alert'>
@@ -239,10 +219,14 @@ class EditPastAppt extends Component {
                  </textarea>
              </label>
          </div>
-         <button type='submit' onClick={this.handleSubmit} className="editPastApptButton"><span><FontAwesomeIcon icon={faSave} size="1x" className="addNote" /></span>
+         <button type='submit' onClick={this.handleSubmit} className="editPastApptButton">
+           <span><FontAwesomeIcon icon={faSave} size="1x" className="addNote" />
+           </span>
              Save
          </button>
-         <button type='submit' onClick={this.handleDelete} className="editPastApptButton"><span><FontAwesomeIcon icon={faTrashAlt} size="1x" className="addNote" /></span>
+         <button type='submit' onClick={this.handleDelete} className="editPastApptButton">
+           <span><FontAwesomeIcon icon={faTrashAlt} size="1x" className="addNote" />
+           </span>
              Delete
          </button>
          </section>

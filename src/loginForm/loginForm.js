@@ -8,34 +8,35 @@ class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => {}
   }
-
      state = { error: null }
   
-       handleSubmitJwtAuth = ev => {
-        ev.preventDefault()
-        this.setState({ error: null })
-        const { username, password } = ev.target
-        AuthApiService.postLogin({
-          username: username.value,
-          password: password.value,
-        })
-          .then(res => {
-            username.value = ''
-            password.value = ''
-            TokenService.saveAuthToken(res.authToken)
-            this.props.onLoginSuccess()
+  handleSubmitJwtAuth = ev => {
+    ev.preventDefault()
+    this.setState({ error: null })
+    const { username, password } = ev.target
+    AuthApiService.postLogin({
+      username: username.value,
+      password: password.value,
+    })
+      .then(res => {
+        username.value = ''
+        password.value = ''
+        TokenService.saveAuthToken(res.authToken)
+        this.props.onLoginSuccess()
            
-          })
-          .catch(res => {
-            this.setState({ error: res.error })
-          })
-      }
-    
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
+  }
     
     render() {
+
         const { error } = this.state
+
   return (
-     <form id='loginForm' onSubmit={this.handleSubmitJwtAuth}>
+    <section className="loginContainer">
+    <form id='loginForm' onSubmit={this.handleSubmitJwtAuth}>
          <h3>Log In</h3>
          <div role='alert'>
           {error && <p className='red'>{error}</p>}
@@ -63,14 +64,46 @@ class LoginForm extends Component {
                  </Input>
              </label>
          </div>
-         <Button type='submit'>
+         <Button type='submit' className='loginButton'>
              Log In
          </Button>
-         </section>
-        
-     </form>
-  );
-}
+         </section> 
+      </form>
+
+      <form id='demoForm' onSubmit={this.handleSubmitJwtAuth}>
+                  <Button type='submit' className="demoButton">
+                      Demo
+                  </Button> 
+                  <section className="loginInputsDemo">
+                  <div className='username'>
+                      <label htmlFor='loginForm_username'>
+                          Username 
+                          <Input 
+                          defaultValue='demo'
+                          name='username'
+                          type='text'
+                          required
+                          id='loginForm_username'>
+                          </Input>
+                      </label>
+                  </div>
+                  <div className='password'>
+                      <label htmlFor='loginForm_password'>
+                          Password 
+                          <Input 
+                          defaultValue='Demo123#'
+                          name='password'
+                          type='password'
+                          required
+                          id='loginForm_password'>
+                          </Input>
+                      </label>
+                  </div>
+                  </section>  
+              </form>
+      </section>
+    );
+  }
 }
 
 export default LoginForm

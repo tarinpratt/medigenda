@@ -2,23 +2,8 @@
 .App {
   font-family: 'Manjari', sans-serif;
   text-align: center;
-  /* width: 380px; */
 }
 
- /* .backgroundImage { */
-  /* background-image: url(../images/greenPills.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
-  /* height: 500px; */
-  /* background: url(../images/greenPills.jpg) no-repeat center center fixed;
-  -webkit-background-size: 100%;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
-  /* padding-bottom: 700px; */
-  /* margin: 0px; */
- /* } */
 
 button {
   font-family: 'Manjari', sans-serif;
@@ -27,31 +12,13 @@ button {
   border: transparent;
   box-shadow: 3px 5px #888888;
   color: rgb(43, 54, 77);
-
 }
 
-/* @media only screen and (max-height: 600px) {
-.backgroundImage {
-  background: url(../images/greenPills.jpg) no-repeat center center fixed;
-  -webkit-background-size: 100%;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-bottom: 200px;
-
-  margin: 0px;
+@media only screen and (max-width: 400px) {
+  button {
+    font-size: 10px;
+    height: 15px;
   }
-} */
-
-/* footer {
-  padding-bottom: 100%;
-  background-image: url(../images/01_green_marble.jpg); 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-} */
-
+}
 
 

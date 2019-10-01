@@ -10,9 +10,9 @@
     padding-top: 10px;
     padding-bottom: 100%;
 }
+
 h3 {
 text-align: center;
-
 }
 
 .editApptDoctor, .editApptLocation, .editApptPurpose, .editApptNotes {
@@ -50,6 +50,13 @@ input[type=radio] {
 
 input[type=radio]:hover {
     cursor: pointer;
+}
+
+@media only screen and (max-width: 400px) {
+    #editUpcomingApptForm {
+        font-size: 12px;
+    }
+
 }
 
 @media only screen and (min-width: 400px) {

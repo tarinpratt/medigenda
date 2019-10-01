@@ -41,7 +41,9 @@ class RegistrationForm extends Component {
 
 
     render() {
- const { error } = this.state
+
+      const { error } = this.state
+
   return (
      <form id='registrationForm'
      onSubmit={this.handleSubmit}>
@@ -86,11 +88,10 @@ class RegistrationForm extends Component {
          <button type='submit'>
              Sign Up
          </button>
-         </section>
-        
+         </section>        
      </form>
-  );
-}
+    );
+  }
 }
 
 export default RegistrationForm;

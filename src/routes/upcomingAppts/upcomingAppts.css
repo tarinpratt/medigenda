@@ -17,7 +17,8 @@
 
 .searchedAppts {
     margin-top: 10px;
-    background-color: rgb(237, 247, 218);
+    background-color: rgb(238, 238, 148);
+    box-shadow: 3px 5px #888888;
     width: 250px;
     margin-right: auto;
     margin-left: auto;
@@ -45,8 +46,6 @@
     display: flex;
     flex-direction: column;
 }
-
-
 
 .apptCardButtons {
     display: flex;
@@ -85,7 +84,6 @@
     width: 75px;
 }
 
-
 .apptDate, .apptTime, .apptDoctor, .apptLocation, .apptPurpose {
     width: 150px;
     margin-bottom: 5px;
@@ -100,8 +98,6 @@
     margin-top: 0px;
     margin-bottom: 20px;
 }
-
-
 
 .otherNotes {
     display: flex;
@@ -126,10 +122,41 @@
     margin-bottom: 30px;
 }
 
-@media only screen and (min-width: 700px)
+@media only screen and (max-width: 400px) {
+    .upcomingApptCard {
+        width: 220px;
+        height: 130px;
+    }
+    .apptCard {
+        width: 220px;
+    }
+    .upcomingAppt {
+        height: 100px;
+    }
+    .apptCardListing, .otherNotes {
+        height: 80px;
+        font-size: 10px;
+        margin-bottom: 0px;
+    }
+    .upApptEdit {
+        margin-top: 0px;
+        width: 40px;
+    }
+    .apptCardButtons, a {
+        height: 20px;
+    }
+    .addApptLink {
+        font-size: 13px;
+        height: 12px;
+    }
+    .searchedAppts {
+        font-size: 12px;
+    }
 
-  {
-       .myUpcomingApptsHeader {
+}
+
+@media only screen and (min-width: 700px) {
+      .myUpcomingApptsHeader {
           width: 500px;
           margin-right: auto;
           margin-left: auto;
@@ -141,17 +168,14 @@
           margin-right: auto;
           margin-left: auto;
       }
-
-      div.upcomingApptCard {
-            width: 300px;
-            margin-right: auto;
-            margin-left: auto;
-       }  
-
+      .upcomingApptCard {
+          width: 300px;
+          margin-right: auto;
+          margin-left: auto;
+      }  
        .apptCardInfo {
-           width: 300px;
-       }
-
+          width: 300px;
+      }
   }
 
   @media only screen and (min-width: 800px) {
@@ -163,18 +187,14 @@
       .myUpcomingApptsHeader {
         margin-right: auto;
         margin-left: auto;
-
       }
       .upcomingApptCard {
         margin-right: auto;
         margin-left: auto;
-
       }
-
   }
 
   @media only screen and (min-width: 1000px) {
-
       .apptCardInfo {
           display: flex;
           flex-wrap: wrap;
@@ -183,25 +203,22 @@
       .myUpcomingApptsHeader {
         margin-right: auto;
         margin-left: auto;
-    }
-
-    .viewAllButton {
+      }
+      .viewAllButton {
         margin-right: auto;
         margin-left: auto;
-    }
-
-    .apptCardInfo {
+      }
+      .apptCardInfo {
         width: 1000px;
-    }
-    .apptCard {
+      }
+      .apptCard {
         width: 1000px;
         margin-right: auto;
         margin-left: auto;
-    }
-    div.upcomingApptCard {
+      }
+      .upcomingApptCard {
         width: 400px;
-   }  
-
+      }  
   }
 
  

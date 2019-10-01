@@ -14,18 +14,6 @@ const UpcomingApptsApiService = {
           : res.json()
       )
   },
-  getEntry(entryId) {
-    return fetch(`${config.API_ENDPOINT}/upcoming_appts/${entryId}`, {
-      headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
-      },
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
-  },
 
   postEntry(appt_date, appt_time, appt_doctor, appt_location, appt_purpose, appt_notes, copay, doc_bill, insurance_bill, upcoming_appt) {
     return fetch(`${config.API_ENDPOINT}/upcoming_appts`, {

@@ -18,6 +18,11 @@
 .addNote {
     padding-right: 5px;
 }
+@media only screen and (max-width: 400px) {
+    #addMedForm {
+        font-size: 12px;
+    }
+}
 
 @media only screen and (min-width: 450px) {
     #addMedForm {

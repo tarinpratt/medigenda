@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import TokenService from '../services/token-service'
-import PublicNav from '../publicNav/publicNav'
 import Nav from '../Nav/nav'
 
 import './header.css';
@@ -18,14 +17,6 @@ class Header extends Component {
       </div>
     )
   }
-  renderPublicNav() {
-    return (
-      <div className="publicNav">
-      <PublicNav /> 
-      </div>
-    )
-  }
-
 
   renderLogoutLink() {
     return (
@@ -53,9 +44,10 @@ class Header extends Component {
       </div>
     )
   }
+
   render() {
+
   return (
-    
       <header className='Header' role="banner">
           <Link to='/'><h1>MediGenda</h1></Link>
           <h2>Your very own personalized medical agenda</h2>
@@ -68,13 +60,11 @@ class Header extends Component {
           {
             TokenService.hasAuthToken() ?
             this.renderPrivateNav()
-            : this.renderPublicNav()
-          }
-          
-      </header>
-   
-  )
-}
+            : null
+          }     
+      </header>   
+    )
+  }
 }
 
 export default Header;

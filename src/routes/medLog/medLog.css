@@ -6,6 +6,7 @@
   background-size: cover;
   padding-top: 10px;
   padding-bottom: 100%; 
+  min-width: 300px;
 }
 table {
     width: 300px;
@@ -19,8 +20,7 @@ th {
     padding-right: 5px;
     padding-left: 0px;
     border-bottom: 2px black solid;
-    background-color: rgb(238, 238, 148);
-   
+    background-color: rgb(238, 238, 148);  
 }
 
 th, td {
@@ -40,27 +40,25 @@ td {
 tr:nth-of-type(odd) { 
     background: #eee; 
   }
-  tr:nth-of-type(even) { 
-    background: #eee; 
+
+tr:nth-of-type(even) { 
+    background: rgb(212, 211, 211); 
   }
 
-  tr:hover { 
+tr:hover { 
     background: rgb(218, 235, 188); 
   }
 
-  .addMedLink {
+.addMedLink {
     margin-bottom: 40px;
   }
 
 
-@media only screen and (max-width: 600px)
-  {
-
+@media only screen and (max-width: 600px) {
 
 	table, thead, tbody, th, td, tr { 
 		display: block; 
 	}
-	
 
 	thead tr { 
 		position: absolute;
@@ -69,22 +67,18 @@ tr:nth-of-type(odd) {
 	}
 	
 	tr { 
-        border: 1px solid #ccc; 
+     border: 1px solid #ccc; 
     }
 	
 	td { 
-
 		border: none;
 		border-bottom: 1px solid #eee; 
-        position: relative;
-        padding-left: 150px;
-
+    position: relative;
+    padding-left: 150px;
 	}
 	
 	td:before { 
-
 		position: absolute;
-
 		top: 6px;
 		left: 6px;
 		width: 45%; 
@@ -92,29 +86,38 @@ tr:nth-of-type(odd) {
 		white-space: nowrap;
     }
     
-    td:nth-of-type(1):before { 
-        content: "Date";
-        font-weight: bold;
-     }
+  td:nth-of-type(1):before { 
+    content: "Date";
+    font-weight: bold;
+    }
+
 	td:nth-of-type(2):before {
-         content: "Time";
-         font-weight: bold;
+    content: "Time";
+    font-weight: bold;
+    }
 
-        }
 	td:nth-of-type(3):before {
-         content: "Medication";
-         font-weight: bold;
-         }
+    content: "Medication";
+    font-weight: bold;
+    }
+
 	td:nth-of-type(4):before {
-         content: "Amount";
-         font-weight: bold;
-         }
+    content: "Amount";
+    font-weight: bold;
+    }
+
 	td:nth-of-type(5):before {
-         content: "Reason For Intake"; 
-         font-weight: bold;
-        }
-
-
+    content: "Reason For Intake"; 
+    font-weight: bold;
+    }
+}
+@media only screen and (max-width: 400px) {
+  .medLog_page{
+    font-size: 12px;
+  }
+  .medlogtable {
+    width: 250px;
+  }
 }
 
 @media only screen and (min-width: 800px)
@@ -124,8 +127,7 @@ tr:nth-of-type(odd) {
     }
       tr.medlogtr {
     height: 40px;
-  }
-
+    }
   }
 
   @media only screen and (min-width: 1100px)
@@ -133,5 +135,4 @@ tr:nth-of-type(odd) {
     table {
       width: 900px;
     }
-
   }

@@ -121,8 +121,8 @@ class EditUpcomingAppt extends Component {
 
       const editUpcomingAppt = this.state.upcomingAppts.map((listing, index) => (
         <ul key={index} className="appt_date">
-                <li>{(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}</li>
-             </ul>
+          <li>{(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}</li>
+        </ul>
       ))
 
         return(
@@ -226,16 +226,9 @@ class EditUpcomingAppt extends Component {
          <button type='submit'><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>
              Save
          </button>
-         {/* <button className="apptCardButtonsList" >
-                 Attended
-             </button> */}
      </form>
-
-        )
-    }
-
-
-        
-    }
+    )
+  }
+}
 
 export default EditUpcomingAppt;

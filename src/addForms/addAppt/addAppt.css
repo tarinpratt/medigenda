@@ -21,9 +21,15 @@
     width: 200px;
 }
 
-
 .addApptButtons {
     margin-right: 25px;
+}
+
+@media only screen and (max-width: 400px) {
+    .addAppt {
+        font-size: 12px;
+    }
+
 }
 
 @media only screen and (min-width: 400px) {
@@ -51,9 +57,6 @@
     }
     .addApptButtons {
         margin-right: auto;
-        margin-left: auto;
-        
-        
+        margin-left: auto;     
     }
-
 }

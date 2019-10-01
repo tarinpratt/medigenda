@@ -1,8 +1,6 @@
 nav {
     text-align: left;
-    width: 100%;
-    
-   
+    width: 100%;  
 }
 
 .medLog {
@@ -12,7 +10,6 @@ nav {
     font-weight: bolder;
     display: block;
     color: rgb(48, 47, 47);
-  
 }
 
 .upcomingAppts {
@@ -30,8 +27,7 @@ nav {
     padding: 5px;
     font-weight: bolder;
     display: block;
-    color:rgb(48, 47, 47);
-    
+    color:rgb(48, 47, 47); 
 }
 
 .medLog:hover {
