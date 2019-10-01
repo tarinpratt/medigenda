@@ -1,14 +1,4 @@
 .myUpcomingAppts{
-    /* margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    padding-top: 10px;
-    background-image: url(../../images/pills.jpg); 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    padding-bottom: 100%;  */
     background: url(../../images/pills.jpg) no-repeat center center fixed;
     -webkit-background-size: 100%;
     -moz-background-size: cover;
@@ -37,7 +27,9 @@
 .upcomingApptCard {
     border-radius: 5px;
     margin-bottom: 10px;
-    background-color: rgb(172, 202, 128)
+    background-color: rgb(172, 202, 128);
+    box-shadow: 3px 5px #888888;
+    color: rgb(80, 79, 79);
 }
 
 .upcomingAppt {
@@ -80,11 +72,13 @@
     margin: 10px;
     margin-bottom: 40px;
     background-color: rgb(185, 185, 243);
+    box-shadow: 3px 5px #888888;
+    color: rgb(80, 79, 79);
 }
 
 .addApptLink:hover {
     cursor: pointer;
-    color: green;
+    
 }
 
 .apptCardButtonsListNotes {

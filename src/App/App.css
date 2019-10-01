@@ -24,6 +24,9 @@ button {
   font-family: 'Manjari', sans-serif;
   cursor: pointer;
   font-size: 15px;
+  border: transparent;
+  box-shadow: 3px 5px #888888;
+  color: rgb(43, 54, 77);
 
 }
 

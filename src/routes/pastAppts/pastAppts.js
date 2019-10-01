@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UpcomingApptsApiService from'../../services/upcoming_appts-api-service'
 import { Link } from 'react-router-dom'
-import { faNotesMedical, faTimes, faArrowDown, faCalendarAlt, faClock } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faArrowDown, faCalendarAlt, faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from 'moment'
 import './pastAppts.css';
