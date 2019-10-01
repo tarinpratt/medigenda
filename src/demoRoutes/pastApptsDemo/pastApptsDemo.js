@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { faNotesMedical, faTimes, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faNotesMedical, faTimes, faArrowDown, faCalendarAlt, faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from 'moment'
 
@@ -78,10 +78,10 @@ class PastApptsDemo extends Component {
             <div key={index} className="pastApptCard">
                 <div className="pastAppt">
             <ul className="pastApptCardListing">
-            <li className="apptDate" onClick={e => this.onSort(e, 'appt_date')}>
+            <li className="apptDate" onClick={e => this.onSort(e, 'appt_date')}><span><FontAwesomeIcon icon={faCalendarAlt} size="1x" className="addNote" /></span>
                 {(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}
             </li>
-            <li className="apptTime">
+            <li className="apptTime"><span><FontAwesomeIcon icon={faClock} size="1x" className="addNote" /></span>
                 {this.tConvert(listing.appt_time)}
             </li>
             <li className="apptLocation">
@@ -125,10 +125,10 @@ class PastApptsDemo extends Component {
             <div key={index} className="pastApptCard">
                 <div className="pastAppt">
             <ul className="pastApptCardListing">
-            <li className="apptDate">
+            <li className="apptDate"><span><FontAwesomeIcon icon={faCalendarAlt} size="1x" className="addNote" /></span>
                 {(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}
             </li>
-            <li className="apptTime">
+            <li className="apptTime"><span><FontAwesomeIcon icon={faClock} size="1x" className="addNote" /></span>
                 {this.tConvert(listing.appt_time)}
             </li>
             <li className="apptLocation">

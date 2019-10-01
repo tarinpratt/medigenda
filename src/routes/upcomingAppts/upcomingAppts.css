@@ -8,8 +8,15 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    padding-bottom: 100%;  */
+    background: url(../../images/pills.jpg) no-repeat center center fixed;
+    -webkit-background-size: 100%;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     padding-top: 10px;
-    padding-bottom: 300px; */
+    padding-bottom: 100%; 
+    min-width: 300px;
 
 }
 .apptCardInfo {
@@ -71,6 +78,7 @@
     border-radius: 5px;
     padding: 5px;
     margin: 10px;
+    margin-bottom: 40px;
     background-color: rgb(185, 185, 243);
 }
 

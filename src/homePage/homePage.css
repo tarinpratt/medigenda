@@ -1,13 +1,57 @@
+.homePage {
+  background: url(../images/greenPills.jpg) no-repeat center center fixed;
+  -webkit-background-size: 100%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 10px;
+  padding-bottom: 100%;
+  min-width: 300px;
+}
+
 p {
     display: block;
     text-align: left;
     padding-left: 15px;
     padding-right: 15px;
 }
+.medlogImage{
+    background-image: url(../images/medlogtable.jpg);
+    height: 155px;
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.upcomingApptImage{
+    background-image: url(../images/upcomingAppt.jpg);
+    height: 90px;
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.pastApptImage{
+    background-image: url(../images/pastAppt.jpg);
+    height: 187px;
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
 
 @media only screen and (min-width: 600px) {
     p {
         width: 550px;
+    }
+}
+@media only screen and (min-width: 800px) {
+    .sampleImages {
+        display: flex;
+        flex-direction: row;
     }
 }
 

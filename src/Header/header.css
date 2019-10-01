@@ -5,14 +5,12 @@
     text-align: left;
     height: 100%;
     width: 100%;
-    /* background: rgb(160, 209, 111); */
     background-image: url(../images/01_green_marble.jpg); 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    /* padding-top: 10px;
-    padding-bottom: 300px; */
+    min-width: 300px;
 }
 
 header {

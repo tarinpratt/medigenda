@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment'
-import { faNotesMedical, faTimes, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faNotesMedical, faTimes, faArrowDown, faCalendarAlt, faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class UpcomingApptsDemo extends Component {
@@ -74,11 +74,11 @@ class UpcomingApptsDemo extends Component {
            <div key={index} className="upcomingApptCard">
               <div className="upcomingAppt">
             <ul className="apptCardListing">
-            <li className="apptDate">
+            <li className="apptDate"><span><FontAwesomeIcon icon={faCalendarAlt} size="1x" className="addNote" /></span>
                     {(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}
 
                  </li>
-                 <li className="apptTime">
+                 <li className="apptTime"><span><FontAwesomeIcon icon={faClock} size="1x" className="addNote" /></span>
                      {this.tConvert(listing.appt_time)}
                  </li>
                  <li className="apptLocation">
@@ -114,10 +114,10 @@ class UpcomingApptsDemo extends Component {
             <div key={index} className="upcomingApptCard">
             <div className="upcomingAppt">
           <ul className="apptCardListing">
-          <li className="apptDate">
+          <li className="apptDate"><span><FontAwesomeIcon icon={faCalendarAlt} size="1x" className="addNote" /></span>
                   {(moment(new Date(listing.appt_date)).add(1, 'day').format('MM / DD / YYYY'))}
                </li>
-               <li className="apptTime">
+               <li className="apptTime"><span><FontAwesomeIcon icon={faClock} size="1x" className="addNote" /></span>
                    {this.tConvert(listing.appt_time)}
                </li>
                <li className="apptLocation">

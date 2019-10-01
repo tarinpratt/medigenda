@@ -1,11 +1,13 @@
 #loginForm {
     margin-top: 50px;
-    background-image: url(../images/greenPills.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url(../images/greenPills.jpg) no-repeat center center fixed;
+    -webkit-background-size: 100%;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     width: 100%;
-    padding-bottom: 500px;
+    padding-top: 10px;
+    padding-bottom: 100%;
     margin: 0px;
 
 }
@@ -18,12 +20,13 @@ input {
 
 
 #loginForm_password {
+    margin-left: 5px;
     width: 129px;
     height: 20px;
 }
 #loginForm_username {
     width: 127px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     height: 20px;
 }
 

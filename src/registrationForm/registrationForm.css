@@ -1,11 +1,13 @@
 #registrationForm {
     margin-top: 50px;
-    background-image: url(../images/greenPills.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url(../images/greenPills.jpg) no-repeat center center fixed;
+    -webkit-background-size: 100%;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     width: 100%;
-    padding-bottom: 500px;
+    padding-top: 10px;
+    padding-bottom: 100%;
     margin: 0px;
 
 }
@@ -51,7 +53,7 @@ button:hover {
     color: red;
 }
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
 
 #registrationForm {
     margin-top: 50px;
@@ -64,4 +66,4 @@ button:hover {
     margin: 0px;
 
     }
-}
+} */

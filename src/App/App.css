@@ -5,15 +5,20 @@
   /* width: 380px; */
 }
 
- .backgroundImage {
-  background-image: url(../images/greenPills.jpg);
+ /* .backgroundImage { */
+  /* background-image: url(../images/greenPills.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
   /* height: 500px; */
-  padding-bottom: 700px;
-  margin: 0px;
-}
+  /* background: url(../images/greenPills.jpg) no-repeat center center fixed;
+  -webkit-background-size: 100%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  /* padding-bottom: 700px; */
+  /* margin: 0px; */
+ /* } */
 
 button {
   font-family: 'Manjari', sans-serif;
@@ -22,16 +27,18 @@ button {
 
 }
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-height: 600px) {
 .backgroundImage {
-  background-image: url(../images/greenPills.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url(../images/greenPills.jpg) no-repeat center center fixed;
+  -webkit-background-size: 100%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  height: 300px;
+  padding-bottom: 200px;
+
   margin: 0px;
   }
-}
+} */
 
 /* footer {
   padding-bottom: 100%;

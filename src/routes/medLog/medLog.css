@@ -1,11 +1,11 @@
 .medLog_page {
-  /* background-image: url(../../images/pills.jpg);  */
-  /* -webkit-background-size: cover;
+  background: url(../../images/pills.jpg) no-repeat center center fixed;
+  -webkit-background-size: 100%;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   padding-top: 10px;
-  padding-bottom: 300px; */
+  padding-bottom: 100%; 
 }
 table {
     width: 300px;
@@ -28,11 +28,6 @@ th, td {
   }
 
 
-/* tr:hover {
-    background: rgb(237, 247, 218);
-
-} */
-
 td {
     margin: 0px;
     padding: 5px;
@@ -51,6 +46,10 @@ tr:nth-of-type(odd) {
 
   tr:hover { 
     background: rgb(218, 235, 188); 
+  }
+
+  .addMedLink {
+    margin-bottom: 40px;
   }
 
 
