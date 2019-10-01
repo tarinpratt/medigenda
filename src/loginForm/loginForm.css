@@ -70,3 +70,9 @@ button:hover {
     display: inline;
 }
 
+@media only screen and (max-width: 400px) {
+    #loginForm {
+        font-size: 13px;
+    }
+}
+
