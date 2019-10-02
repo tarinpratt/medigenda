@@ -14,16 +14,16 @@ MediGenda also has upcoming and past appointments logs where users can post an a
 
 ## **Screenshots**
 
-Landing Page: 
+
 ![MediGenda screenshot](/src/images/medigendaHome.jpg)
 
-Medication Log:
+
 ![MediGenda screenshot](/src/images/medlog.jpg)
 
-Appointments Log:
+
 ![MediGenda screenshot](/src/images/upcomingAppts.jpg)
 
-Search For Specific Date:
+
 ![MediGenda screenshot](/src/images/searchDate.jpg)
 
 ## **Built With**
