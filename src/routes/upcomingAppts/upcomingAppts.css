@@ -69,10 +69,14 @@
     border-radius: 5px;
     padding: 5px;
     margin: 10px;
-    margin-bottom: 40px;
     background-color: rgb(185, 185, 243);
     box-shadow: 3px 5px #888888;
     color: rgb(80, 79, 79);
+    display: block;
+    width: 180px;
+    margin-right: auto;
+    margin-left: auto;
+    
 }
 
 .addApptLink:hover {
@@ -89,10 +93,6 @@
     margin-bottom: 5px;
 }
 
-.apptDate:hover {
-    cursor: pointer;
-    color: green;
-}
 
 .viewAllButton {
     margin-top: 0px;

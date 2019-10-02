@@ -48,7 +48,10 @@ class MedLog extends Component {
     
   return (
       <div className="medLog_page">
-          <h1 className="myMeds">My Medications</h1>      
+          <h1 className="myMeds">My Medications</h1> 
+          <Link to='/addMed' className="addMedLink"><button type='submit'><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>
+             Add New Entry
+         </button></Link>     
           <table className="medlogtable">
               <thead className="medloghead">
               <tr className="medlogtr">
@@ -64,9 +67,7 @@ class MedLog extends Component {
               </tbody>
           </table>
           
-         <Link to='/addMed' className="addMedLink"><button type='submit'><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>
-             Add New Entry
-         </button></Link>
+        
 
       </div>
  

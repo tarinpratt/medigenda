@@ -132,6 +132,7 @@ class UpcomingAppts extends Component {
   return (
      <section className="myUpcomingAppts">
          <h1 className="myUpcomingApptsHeader"> My Upcoming Appointments</h1>
+         <Link to='/addAppt' className="addApptLink"><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>Add New Appointment</Link>
 
             {
               this.state.showAppts ?
@@ -183,7 +184,7 @@ class UpcomingAppts extends Component {
             }
         </div>
          
-         <Link to='/addAppt' className="addApptLink"><span><FontAwesomeIcon icon={faNotesMedical} size="1x" className="addNote" /></span>Add New Appointment</Link>
+         
 
       </section>
     );
