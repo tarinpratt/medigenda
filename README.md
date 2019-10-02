@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **MediGenda*
 
-## Available Scripts
+Inspired by mother who is battling breast cancer, MediGenda was created with the intent to track and log all upcoming and past appointments, billing information, and medicinal intake. Instead of constantly keeping track of tangible medical records, MediGenda makes it so that you can log and file everything in one place at anytime. 
 
-In the project directory, you can run:
+MediGenda has a medication log where users can post what medications they take at what time. This feature helps users to track how often their symptoms occur, as well as which medications they took for relief and how often. 
 
-### `npm start`
+MediGenda also has upcoming and past appointments logs where users can post an appointment date, appointment time, purpose for the appointment, location of the appointment, the doctor the appointment is scheduled with, and any other notes or reminders regarding the appointment.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ Users can edit their appointments at any time and mark the appointment as a past appointment. Once an appointment has been marked as attended, it is moved to the past appointments log where users can keep track of the billing information for an appointment as well as delete an appointment that they don't want to track anymore. 
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## **Demo**
 
-### `npm test`
+[Live Demo](https://medigenda-app.pratttarin.now.sh/)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **Screenshots**
 
-### `npm run build`
+Landing Page: 
+![MediGenda screenshot](/images/medigendaHome.jpg)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Medication Log:
+![MediGenda screenshot](/images/medlog.jpg)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Appointments Log:
+![MediGenda screenshot](/images/upcomingAppts.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Search For Specific Date:
+![MediGenda screenshot](/images/searchDate.jpg)
 
-### `npm run eject`
+## **Built With**
+* React
+* CSS
+* Node
+* Express
+* PostgreSQL
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
