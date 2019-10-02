@@ -15,16 +15,16 @@ MediGenda also has upcoming and past appointments logs where users can post an a
 ## **Screenshots**
 
 Landing Page: 
-![MediGenda screenshot](/images/medigendaHome.jpg)
+![MediGenda screenshot](/src/images/medigendaHome.jpg)
 
 Medication Log:
-![MediGenda screenshot](/images/medlog.jpg)
+![MediGenda screenshot](/src/images/medlog.jpg)
 
 Appointments Log:
-![MediGenda screenshot](/images/upcomingAppts.jpg)
+![MediGenda screenshot](/src/images/upcomingAppts.jpg)
 
 Search For Specific Date:
-![MediGenda screenshot](/images/searchDate.jpg)
+![MediGenda screenshot](/src/images/searchDate.jpg)
 
 ## **Built With**
 * React
