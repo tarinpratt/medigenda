@@ -13,14 +13,15 @@ MediGenda has a medication log where users can post what medications they take a
 
 ![MediGenda screenshot](/src/images/medlog.jpg)
 
-MediGenda also has upcoming and past appointments logs where users can post an appointment date, appointment time, purpose for the appointment, location of the appointment, the doctor the appointment is scheduled with, and any other notes or reminders regarding the appointment.
+MediGenda also has upcoming and past appointments logs where users can post an appointment date, appointment time, purpose for the appointment, location of the appointment, the doctor the appointment is scheduled with, and any other notes or reminders regarding the appointment. Users can also search for appointments be date. 
 
- Users can edit their appointments at any time and mark the appointment as a past appointment. Once an appointment has been marked as attended, it is moved to the past appointments log where users can keep track of the billing information for an appointment as well as delete an appointment that they don't want to track anymore. 
- 
 ![MediGenda screenshot](/src/images/upcomingAppts.jpg)
 
-
 ![MediGenda screenshot](/src/images/searchDate.jpg)
+
+ Users can edit their appointments at any time and mark the appointment as a past appointment. Once an appointment has been marked as attended, it is moved to the past appointments log where users can keep track of the billing information for an appointment as well as delete an appointment that they don't want to track anymore. 
+
+![MediGenda screenshot](/src/images/pastAppt.jpg)
 
 ## **Built With**
 * React
