@@ -1,4 +1,4 @@
-# **MediGenda*
+# **MediGenda**
 
 Inspired by mother who is battling breast cancer, MediGenda was created with the intent to track and log all upcoming and past appointments, billing information, and medicinal intake. Instead of constantly keeping track of tangible medical records, MediGenda makes it so that you can log and file everything in one place at anytime. 
 
