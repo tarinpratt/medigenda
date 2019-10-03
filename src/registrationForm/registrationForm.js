@@ -45,8 +45,7 @@ class RegistrationForm extends Component {
       const { error } = this.state
 
   return (
-     <form id='registrationForm'
-     onSubmit={this.handleSubmit}>
+     <form id='registrationForm' role='post' onSubmit={this.handleSubmit}>
          <h3>Register</h3>
          <div role='alert'>
           {error && <p className='red'>{error}</p>}

@@ -126,7 +126,7 @@ class EditUpcomingAppt extends Component {
       ))
 
         return(
-            <form id='editUpcomingApptForm' onSubmit={this.handleSubmit}>
+            <form id='editUpcomingApptForm' role='patch' onSubmit={this.handleSubmit}>
               <h3>{editUpcomingAppt}</h3>
          <div className='editApptDate'>
              <label htmlFor='editApptForm_appt_date'>

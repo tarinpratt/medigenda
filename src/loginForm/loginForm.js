@@ -36,7 +36,7 @@ class LoginForm extends Component {
 
   return (
     <section className="loginContainer">
-    <form id='loginForm' onSubmit={this.handleSubmitJwtAuth}>
+    <form id='loginForm' role='post' onSubmit={this.handleSubmitJwtAuth}>
          <h3>Log In</h3>
          <div role='alert'>
           {error && <p className='red'>{error}</p>}
@@ -70,7 +70,7 @@ class LoginForm extends Component {
          </section> 
       </form>
 
-      <form id='demoForm' onSubmit={this.handleSubmitJwtAuth}>
+      <form id='demoForm' role='post' onSubmit={this.handleSubmitJwtAuth}>
                   <Button type='submit' className="demoButton">
                       Demo
                   </Button> 

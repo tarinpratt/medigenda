@@ -32,7 +32,7 @@ class AddMedForm extends Component {
     render() {
       
   return (
-     <form id='addMedForm' onSubmit={this.handleSubmit}>
+     <form id='addMedForm' role='post' onSubmit={this.handleSubmit}>
          <h3>New Medication Entry <span><FontAwesomeIcon icon={faPrescription} size="2x" className="rx" /></span></h3>
          
          <div className='medDate'>

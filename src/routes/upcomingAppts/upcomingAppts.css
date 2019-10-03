@@ -151,7 +151,10 @@
 }
 
 @media only screen and (min-width: 700px) {
-      .searchedAppts {
+        section.pastApptCard {
+            width: 300px;
+        }
+      div.searchedAppts {
           width: 300px;
       }
       .myUpcomingApptsHeader {
@@ -193,6 +196,12 @@
   }
 
   @media only screen and (min-width: 1000px) {
+      section.pastApptCard {
+          width: 400px;
+      }
+      div.searchedAppts{
+          width: 400px;
+      }
     .myUpcomingAppts {
         background: lightgoldenrodyellow;
     }

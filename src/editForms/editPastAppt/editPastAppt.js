@@ -160,7 +160,7 @@ class EditPastAppt extends Component {
       const { error } = this.state
 
         return (
-          <form id='editPastApptForm' onSubmit={this.handleSubmit}>
+          <form id='editPastApptForm' role='patch' onSubmit={this.handleSubmit}>
             <div className='EditBookmark__error' role='alert'>
             {error && <p>{error.message}</p>}
             </div>

@@ -48,7 +48,7 @@ class AddAppt extends Component {
     render() {
              
   return (
-     <form id='addApptForm' onSubmit={this.handleSubmit}>
+     <form id='addApptForm' role='post' onSubmit={this.handleSubmit}>
          <h3>Add My Appointment</h3>
          <section className="addAppt">
          <div className='apptDate'>
