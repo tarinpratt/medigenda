@@ -19,7 +19,6 @@ import './App.css';
 class App extends Component {
 
   render() {
-
   return (
     <main className='App'>
       <Header /> 
@@ -33,7 +32,6 @@ class App extends Component {
       <PrivateRoute path='/addMed' component={AddMedForm} />
       <PrivateRoute path='/editPastAppt/:upcomingApptId' component={EditPastAppt} />
       <PrivateRoute path='/editUpcomingAppt/:upcomingApptId' component={EditUpcomingAppt} />
-      
     </main>   
     );
   }

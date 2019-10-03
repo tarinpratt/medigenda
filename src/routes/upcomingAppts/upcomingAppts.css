@@ -144,7 +144,9 @@
         font-size: 13px;
         height: 12px;
     }
-
+    .searchedAppts {
+        font-size: 12px;
+    }
 
 }
 
