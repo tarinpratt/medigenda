@@ -7,21 +7,21 @@ Inspired by mother who is battling breast cancer, MediGenda was created for anyo
 
 [Live Demo](https://medigenda-app.pratttarin.now.sh/)
 
-![MediGenda screenshot](/src/images/medigendaHome.jpg)
+![MediGenda screenshot](/src/images/homePage.jpg)
 
 MediGenda has a medication log where users can post what medications they take at what time. This feature helps users to track how often their symptoms occur, as well as which medications they took for relief and how often.
 
-![MediGenda screenshot](/src/images/medlog.jpg)
+![MediGenda screenshot](/src/images/medlog2.jpg)
 
 MediGenda also has upcoming and past appointments logs where users can post an appointment date, appointment time, purpose for the appointment, location of the appointment, the doctor the appointment is scheduled with, and any other notes or reminders regarding the appointment. Users can also search for appointments be date. 
 
-![MediGenda screenshot](/src/images/upcomingAppts.jpg)
+![MediGenda screenshot](/src/images/upcomingAppts2.jpg)
 
-![MediGenda screenshot](/src/images/searchDate.jpg)
+![MediGenda screenshot](/src/images/calendar2.jpg)
 
  Users can edit their appointments at any time and mark the appointment as a past appointment. Once an appointment has been marked as attended, it is moved to the past appointments log where users can keep track of the billing information for an appointment as well as delete an appointment that they don't want to track anymore. 
 
-![MediGenda screenshot](/src/images/pastAppt.jpg)
+![MediGenda screenshot](/src/images/pastAppts2.jpg)
 
 ## **Built With**
 * React
