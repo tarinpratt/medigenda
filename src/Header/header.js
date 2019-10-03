@@ -48,15 +48,14 @@ class Header extends Component {
   render() {
 
   return (
-      <header className='Header' role="banner">
-          
+      <header className='Header' role="banner"> 
           {
             TokenService.hasAuthToken()?
             this.renderLogoutLink()
             : this.renderLoginLink()
           } 
-<Link to='/'><h1 className="title"></h1></Link>
-<p className="caption">Your very own personal medical agenda</p>
+      <Link to='/'><h1 className="title"></h1></Link>
+      <p className="caption">Your very own personal medical agenda</p>
           {
             TokenService.hasAuthToken() ?
             this.renderPrivateNav()
