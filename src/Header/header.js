@@ -49,19 +49,20 @@ class Header extends Component {
 
   return (
       <header className='Header' role="banner">
-          <Link to='/'><h1>MediGenda</h1></Link>
-          <h2>Your very own personalized medical agenda</h2>
+          
           {
             TokenService.hasAuthToken()?
             this.renderLogoutLink()
             : this.renderLoginLink()
           } 
-
+<Link to='/'><h1 className="title"></h1></Link>
+<p className="caption">Your very own personal medical agenda</p>
           {
             TokenService.hasAuthToken() ?
             this.renderPrivateNav()
             : null
-          }     
+          }    
+          
       </header>   
     )
   }

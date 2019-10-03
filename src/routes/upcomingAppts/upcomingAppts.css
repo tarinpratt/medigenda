@@ -1,9 +1,5 @@
 .myUpcomingAppts{
-    background: url(../../images/pills.jpg) no-repeat center center fixed;
-    -webkit-background-size: 100%;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: lightgoldenrodyellow;
     padding-top: 10px;
     padding-bottom: 100%; 
     min-width: 300px;
@@ -80,8 +76,7 @@
 }
 
 .addApptLink:hover {
-    cursor: pointer;
-    
+    cursor: pointer; 
 }
 
 .apptCardButtonsListNotes {
@@ -92,7 +87,6 @@
     width: 150px;
     margin-bottom: 5px;
 }
-
 
 .viewAllButton {
     margin-top: 0px;
@@ -123,6 +117,7 @@
 }
 
 @media only screen and (max-width: 400px) {
+
     .upcomingApptCard {
         width: 220px;
         height: 130px;
@@ -149,13 +144,14 @@
         font-size: 13px;
         height: 12px;
     }
-    .searchedAppts {
-        font-size: 12px;
-    }
+
 
 }
 
 @media only screen and (min-width: 700px) {
+      .searchedAppts {
+          width: 300px;
+      }
       .myUpcomingApptsHeader {
           width: 500px;
           margin-right: auto;
@@ -195,6 +191,9 @@
   }
 
   @media only screen and (min-width: 1000px) {
+    .myUpcomingAppts {
+        background: lightgoldenrodyellow;
+    }
       .apptCardInfo {
           display: flex;
           flex-wrap: wrap;

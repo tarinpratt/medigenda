@@ -1,15 +1,18 @@
 .homePage {
-  background: url(../images/greenPills.jpg) no-repeat center center fixed;
+  background: url(../images/greenPills.jpg) no-repeat center center fixed ;
   -webkit-background-size: 100%;
   -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -o-background-size: cover; 
+  background-size: cover; 
   padding-top: 10px;
   padding-bottom: 100%;
   min-width: 300px;
 }
 
+
 p {
+    color: #6A9A7E;
+    font-weight: bold;
     display: block;
     text-align: left;
     padding-left: 15px;
@@ -36,6 +39,9 @@ p {
 }
 
 @media only screen and (min-width: 1000px) {
+    .homePage {
+        background: lightgoldenrodyellow;
+    }
     p {
         text-align: center;
         padding: 10px;
@@ -43,4 +49,15 @@ p {
         margin-left: auto;
         font-size: 20px;
     }
+    .pillImage {
+        margin-right: auto;
+        margin-left: auto;
+        padding: 75px;
+        height: 100px;
+        width: 100px;
+        border-radius: 500px;
+        background: url(../images/greenPills2.jpg) ;
+
+    }
 }
+

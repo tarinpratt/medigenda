@@ -1,9 +1,5 @@
 .medLog_page {
-  background: url(../../images/pills.jpg) no-repeat center center fixed;
-  -webkit-background-size: 100%;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: lightgoldenrodyellow;
   padding-top: 10px;
   padding-bottom: 100%; 
   min-width: 300px;
@@ -127,6 +123,12 @@ tr:hover {
     }
       tr.medlogtr {
     height: 40px;
+    }
+  }
+
+  @media only screen and (min-width: 1000px) {
+    .medLog_page {
+      background: lightgoldenrodyellow;
     }
   }
 

@@ -1,9 +1,5 @@
 .myPastAppts {
-    background: url(../../images/pills.jpg) no-repeat center center fixed;
-    -webkit-background-size: 100%;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: lightgoldenrodyellow;
     padding-top: 10px;
     padding-bottom: 100%; 
     min-width: 300px;
@@ -111,6 +107,10 @@ h4.docBill {
     height: 50px;
 }
 
+.searchedAppts {
+    width: 280px;
+}
+
 @media only screen and (max-width: 400px) {
     .searchedPastAppts {
         font-size: 12px;
@@ -119,8 +119,9 @@ h4.docBill {
         width: 220px;
     }
     .pastApptCard {
-        width: 220px;
-        height: 230px;
+        font-size: 10px;
+        width: 230px;
+        height: 200px;
     }
     h4.copay {
         padding-right: 10px;
@@ -138,6 +139,9 @@ h4.docBill {
 }
 
 @media only screen and (min-width: 1000px){
+    .myPastAppts {
+        background: lightgoldenrodyellow;
+    }
     .apptCardInfo {
         width: 100%;
     }

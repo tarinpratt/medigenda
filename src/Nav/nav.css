@@ -9,7 +9,7 @@ nav {
     padding: 5px;
     font-weight: bolder;
     display: block;
-    color: rgb(48, 47, 47);
+    color: rgb(36, 67, 116); 
 }
 
 .upcomingAppts {
@@ -18,7 +18,7 @@ nav {
     padding: 5px;
     font-weight: bolder;
     display: block;
-    color: rgb(48, 47, 47);
+    color: rgb(36, 67, 116); 
 }
 
 .pastAppts {
@@ -27,7 +27,7 @@ nav {
     padding: 5px;
     font-weight: bolder;
     display: block;
-    color:rgb(48, 47, 47); 
+    color:rgb(36, 67, 116);  
 }
 
 .medLog:hover {
