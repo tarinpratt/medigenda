@@ -23,12 +23,12 @@ input {
 #loginForm_password {
     margin-left: 5px;
     width: 129px;
-    height: 20px;
+    height: 30px;
 }
 #loginForm_username {
     width: 127px;
     margin-bottom: 5px;
-    height: 20px;
+    height: 30px;
 }
 
 div.password {

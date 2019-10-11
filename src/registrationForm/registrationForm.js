@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AuthApiService from '../services/auth-api-service';
 
 import './registrationForm.css';
 
 class RegistrationForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: false // will be true when ajax request is running
+    }
+  }
     static defaultProps = {
         history: {
           push: () => {},
@@ -21,7 +29,9 @@ class RegistrationForm extends Component {
         ev.preventDefault()
         const { username, email, password } = ev.target
     
-        this.setState({ error: null })
+        this.setState({ 
+          loading: true,
+          error: null })
          AuthApiService.postUser({
            username: username.value,
            email: email.value,
@@ -33,6 +43,9 @@ class RegistrationForm extends Component {
         email.value = ''
         password.value = ''
         this.handleRegistrationSuccess()
+        this.setState({
+          loading: false
+        })
            })
           .catch(res => {
             this.setState({ error: res.error})
@@ -46,6 +59,10 @@ class RegistrationForm extends Component {
 
   return (
      <form id='registrationForm' role='post' onSubmit={this.handleSubmit}>
+       { this.state.loading? 
+       <div><FontAwesomeIcon icon={faSpinner}/>Loading...</div>
+       : null
+       }       
          <h3>Register</h3>
          <div role='alert'>
           {error && <p className='red'>{error}</p>}
@@ -84,6 +101,7 @@ class RegistrationForm extends Component {
                  </input>
              </label>
          </div>
+         <section className='passwordReq'>Password must contain 1 upper case, lower case, number and special character</section>
          <button type='submit'>
              Sign Up
          </button>

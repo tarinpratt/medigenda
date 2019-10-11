@@ -18,6 +18,10 @@
 .addNote {
     padding-right: 5px;
 }
+
+#addMedForm_medDate, #addMedForm_time, #addMedForm_medName, #addMedForm_amountTaken, #addMedForm_reasonForIntake {
+    height: 30px;
+}
 @media only screen and (max-width: 400px) {
     #addMedForm {
         font-size: 12px;

@@ -16,6 +16,7 @@
 
 #editPastApptForm_copay, #editPastApptForm_docBill, #editPastApptForm_insuranceBill {
     width: 45px;
+    height: 30px;
 } 
 
 #editPastApptForm_apptNotes {

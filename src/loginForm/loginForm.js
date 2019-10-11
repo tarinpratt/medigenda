@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import TokenService from '../services/token-service'
 import AuthApiService from '../services/auth-api-service'
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Input } from '../Utils/Utils'
 import './loginForm.css';
 
@@ -8,11 +10,15 @@ class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => {}
   }
-     state = { error: null }
+     state = { 
+       loading: false,
+       error: null }
   
   handleSubmitJwtAuth = ev => {
     ev.preventDefault()
-    this.setState({ error: null })
+    this.setState({ 
+      loading: true, 
+      error: null })
     const { username, password } = ev.target
     AuthApiService.postLogin({
       username: username.value,
@@ -23,6 +29,9 @@ class LoginForm extends Component {
         password.value = ''
         TokenService.saveAuthToken(res.authToken)
         this.props.onLoginSuccess()
+        this.setState({
+          loading: false
+        })
            
       })
       .catch(res => {
@@ -37,6 +46,9 @@ class LoginForm extends Component {
   return (
     <section className="loginContainer">
     <form id='loginForm' role='post' onSubmit={this.handleSubmitJwtAuth}>
+      {this.state.loading? 
+      <div><FontAwesomeIcon icon={faSpinner}/>Loading...</div>
+    : null}
          <h3>Log In</h3>
          <div role='alert'>
           {error && <p className='red'>{error}</p>}

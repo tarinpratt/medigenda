@@ -24,12 +24,18 @@ input {
     margin-bottom: 5px;
 }
 
+#registrationForm_userName {
+    height: 30px;
+}
+
 #registrationForm_email {
     width: 160px;
+    height: 30px;
 }
 
 #registrationForm_password {
     width: 129px;
+    height: 30px;
 }
 
 .userName, .email, .registrationPassword {
@@ -49,7 +55,18 @@ button:hover {
 }
 
 .red {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
     color: red;
+}
+
+.passwordReq {
+    margin-right: auto;
+    margin-left: auto;
+    width: 200px;
+    font-size: 12px;
+    text-align: left;
 }
 
 @media only screen and (max-width: 400px) {

@@ -8,17 +8,25 @@
 
 #addApptForm_apptDate {
     width: 100px;
+    height: 30px;
 }
 #addApptForm_apptTime {
     width: 98px;
+    height: 30px;
 }
 
 #addApptForm_apptLocation {
     width: 188px;
+    height: 30px;
 }
 
 #addApptForm_apptDoctor {
     width: 200px;
+    height: 30px;
+}
+
+#addApptForm_purposeForVisit, #addApptForm_apptNotes {
+    height: 50px;
 }
 
 .addApptButtons {

@@ -47,7 +47,7 @@ p {
         background: lightgoldenrodyellow;
     }
     p {
-        text-align: center;
+        /* text-align: center; */
         padding: 10px;
         margin-right: auto;
         margin-left: auto;
