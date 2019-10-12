@@ -9,10 +9,15 @@
   min-width: 300px;
 }
 
-.demo {
+.demoFont {
     margin-top: 15px;
     display: block;
+    color: black;
+    border: 3px solid grey;
+    border-radius: 20px;
+    width: 120px;
 }
+
 
 p {
     color: rgb(27, 63, 38);
@@ -47,7 +52,6 @@ p {
         background: lightgoldenrodyellow;
     }
     p {
-        /* text-align: center; */
         padding: 10px;
         margin-right: auto;
         margin-left: auto;
