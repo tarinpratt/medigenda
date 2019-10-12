@@ -14,7 +14,7 @@ class HomePage extends Component {
             TokenService.hasAuthToken()?
             null
             : <p>With MediGenda, you can give your memory a rest by storing details regarding upcoming doctors appointments, past doctors visits, billing, and medication intake with our easy to use record keeper.
-              <Link to='/login' className="demoFont">Try out our demo</Link>
+              <Link to='/login' className="demoFont">Try our demo</Link>
               </p>   
           } 
       <section className="pillImage"></section>

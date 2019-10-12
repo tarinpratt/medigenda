@@ -15,7 +15,7 @@
     color: black;
     border: 3px solid grey;
     border-radius: 20px;
-    width: 120px;
+    width: 90px;
 }
 
 
@@ -26,6 +26,7 @@ p {
     text-align: left;
     padding-left: 15px;
     padding-right: 15px;
+    line-height: 1.5em;
 }
 
 @media only screen and (max-width: 400px) {
